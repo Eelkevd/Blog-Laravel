@@ -12,8 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome', [
-    	'name' => 'Jorik'
-    ]);
+
+	$blogtext = DB::table('articles')->get();
+
+	return $blogtext;
+
+    //return view('welcome');
 });
 
