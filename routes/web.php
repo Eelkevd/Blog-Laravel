@@ -11,12 +11,24 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/articles', 'ArticlesController@home');
 
-	$blogtext = DB::table('articles')->get();
+/*Route::get('/articles', function () {
 
-	return $blogtext;
+	//$articles = DB::table('articles')->get();
 
-    //return view('welcome');
-});
+	$articles = Article::all();
 
+    return view('articles.home', compact('articles'));
+});*/
+
+Route::get('/articles/{article}', 'ArticlesController@show');
+
+/*Route::get('/articles/{article}', function ($id) {
+
+	//$article = DB::table('articles')->find($id);
+
+	$article = Article::find($id);
+
+    return view('articles.show', compact('article'));
+});*/

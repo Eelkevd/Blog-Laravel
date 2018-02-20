@@ -16,6 +16,8 @@
         </style>
     </head>
     <body>
-        <h1> HALLO, <?php echo $name ?> </h1>
+        
+                <h1>{{ $article->bodytext }}</h1>
+
     </body>
 </html>
