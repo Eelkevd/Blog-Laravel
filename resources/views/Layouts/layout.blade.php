@@ -9,6 +9,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+        <link type="text/css" rel="stylesheet" href="/css/blog2.css" />
 
         <!-- Styles -->
         <style>

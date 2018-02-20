@@ -22,7 +22,7 @@ Route::get('/articles', 'ArticlesController@home');
     return view('articles.home', compact('articles'));
 });*/
 
-Route::get('/articles/{article}', 'ArticlesController@show');
+//Route::get('/articles/{article}', 'ArticlesController@show');
 
 /*Route::get('/articles/{article}', function ($id) {
 
@@ -32,3 +32,5 @@ Route::get('/articles/{article}', 'ArticlesController@show');
 
     return view('articles.show', compact('article'));
 });*/
+
+Route::get('/articles/create', 'ArticlesController@create');

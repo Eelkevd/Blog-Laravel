@@ -1,0 +1,45 @@
+
+body {
+	background-color: #F4F4E2; 
+	padding: 35px;
+    margin: 30px;
+  	font-family: Courier; 
+	text-align: center; 
+	}
+
+#blogText{
+	height: 400px;
+	max-height: 800px;
+	max-width: 600px;
+	min-width: 600px;
+    border-bottom: 1px solid ;
+	border-left: 1px solid ;
+	border-right: 1px solid ;
+	border-top: 1px solid ;
+	margin-bottom: 10px;
+	overflow-y: scroll;
+	word-wrap: break-word;
+	font-family: Courier;
+	padding: 3px;
+}
+
+#showBlogPage, #blogPage, #blogEditPage{
+    position: relative;
+    background-color: black;
+   	text-align: center; 
+}
+
+#usrInput, #selectorCat{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	background-color: white;
+	padding: 5px;
+	width: 400px;
+	display: inline-block;
+	font-family: Courier;
+	font-size: 80%;
+	border-bottom: 1px solid ;
+	border-left: 1px solid ;
+	border-right: 1px solid ;
+	border-top: 1px solid ;
+}
