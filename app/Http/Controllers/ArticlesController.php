@@ -15,11 +15,11 @@ class ArticlesController extends Controller
     	return view('articles.home', compact('articles'));
     }
 
-      public function show($id)
+      public function show(Article $article)
     {
 		//$article = DB::table('articles')->find($id);
 
-		$article = Article::find($id);
+		//$article = Article::find($id);
 
 	    return view('articles.show', compact('article'));
     }
