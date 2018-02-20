@@ -3,13 +3,17 @@
         
     @section ('content')
 
+    <h1> WELCOME HOME </h1>
+
         <ul>
 
-            @foreach ($articles as $article)
+            
+
+            <!--@foreach ($articles as $article)
 
                 <li>{{$article->bodytext}}</li>
 
-            @endforeach 
+            @endforeach -->
 
         </ul>
 

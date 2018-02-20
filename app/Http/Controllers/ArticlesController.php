@@ -32,4 +32,20 @@ class ArticlesController extends Controller
 
 	    return view('articles.create');
     }
+
+    public function store() {
+
+    	// create a new article/blog
+
+    	$article = new Article;
+
+    	$article->title = request('title');
+
+    	$article->bodytext = request('bodytext');
+
+    	// save into the database
+    	$article->save();
+
+    	return redirect('articles/home');
+    }
 }
