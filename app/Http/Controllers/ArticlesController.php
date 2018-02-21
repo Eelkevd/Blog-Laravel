@@ -10,7 +10,7 @@ class ArticlesController extends Controller
     {
     	//$articles = DB::table('articles')->get();
 
-		$articles = Article::all();
+		$articles = Article::latest()->get();
 
     	return view('articles.home', compact('articles'));
     }

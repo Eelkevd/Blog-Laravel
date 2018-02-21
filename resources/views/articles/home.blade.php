@@ -10,7 +10,7 @@
     @section ('content')
 
     
-
+    <div id="blogOverview">
         <ul>
 
             
@@ -22,5 +22,6 @@
             @endforeach
 
         </ul>
+    </div>
 
     @endsection

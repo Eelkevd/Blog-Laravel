@@ -29,6 +29,10 @@ body {
    	text-align: center; 
 }
 
+#blogOverview {
+	background-color: white;
+}
+
 #blogTitle{
 	margin-top: 20px;
 	margin-bottom: 20px;
