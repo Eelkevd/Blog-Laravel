@@ -20,7 +20,7 @@
 					 </div>-->
 					 <textarea name="bodytext" id="blogText" placeholder="Type your article"></textarea>
 					 <br />
-					 <input type="submit" id="btnSubBlog" align="center">
+					 <input type="submit" id="btnSubBlog" align="center" value="submit">
 				</div>
 
 				@include('layouts.error')
