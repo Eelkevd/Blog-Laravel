@@ -9,6 +9,10 @@
 
         {{ $article -> bodytext }}
 
+        <br/>
+
+        <a href= \articles/home>Cancel</a>
+
     </div>
 
     @endsection

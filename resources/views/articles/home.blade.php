@@ -1,4 +1,3 @@
-
 @extends ('layouts.layout')
 
 	@section ('header')
@@ -7,21 +6,3 @@
 
 	@endsection
         
-    @section ('content')
-
-    
-    <div id="blogOverview">
-        <ul>
-
-            
-
-            @foreach ($articles as $article)
-
-            	@include('articles.article')
-
-            @endforeach
-
-        </ul>
-    </div>
-
-    @endsection

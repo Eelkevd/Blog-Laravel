@@ -6,13 +6,13 @@ use App\Article;
 
 class ArticlesController extends Controller
 {
-    public function home()
+    public function blogs()
     {
     	//$articles = DB::table('articles')->get();
 
 		$articles = Article::latest()->get();
 
-    	return view('articles.home', compact('articles'));
+    	return view('articles.blogs', compact('articles'));
     }
 
       public function show(Article $article)
@@ -24,6 +24,15 @@ class ArticlesController extends Controller
 		//$article = Article::find($id);
 
 	    return view('articles.show', compact('article'));
+    }
+
+       public function home()
+    {
+        //$article = DB::table('articles')->find($id);
+
+        //$article = Article::find($id);
+
+        return view('articles.home');
     }
 
       public function create()
