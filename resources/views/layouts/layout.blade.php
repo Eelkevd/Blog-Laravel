@@ -21,13 +21,13 @@
 
         @yield('header')
 
-        @include('Layouts.header')
+        @include('layouts.header')
 
         
 
         @yield('content')
 
-        @include('Layouts.footer')
+        @include('layouts.footer')
 
     </body>
 </html>

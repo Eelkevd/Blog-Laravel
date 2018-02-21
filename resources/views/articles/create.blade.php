@@ -23,8 +23,8 @@
 					 <input type="submit" id="btnSubBlog" align="center">
 				</div>
 
-				@include('Layouts.error')
-				
+				@include('layouts.error')
+
 			</form>
 
     @endsection
