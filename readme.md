@@ -1,5 +1,5 @@
 # Laravel blog Eelke & Jorik
-### Blog week 5
+### Blog week 6
 A blog application to share your writings and comments with the world!
 
 A blog apllication build with laravel based on the userstories as described in the CodeGorilla assignment of week 6 (discussed down below) and a working online demo with Heroku.
