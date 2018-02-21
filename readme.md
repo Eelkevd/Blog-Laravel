@@ -2,16 +2,16 @@
 ### Blog week 5
 A blog application to share your writings and comments with the world!
 
-A blog apllication build with laravel based on the userstories as described in the CodeGorilla assignment of week 6 (discussed down below) and a working online demo.
+A blog apllication build with laravel based on the userstories as described in the CodeGorilla assignment of week 6 (discussed down below) and a working online demo with Heroku.
 
 ## Follow the progression: https://trello.com/b/vLQRY9Jd/blog-laravel
 
 ## Description of the application
 
 ### Workflow
-- monday: 
-- tuesday: 
-- wednesday: 
+- monday: Install laravel, made shared Trello, Github repository
+- tuesday: Laracast lesson 1-7, userstory W3-001, layout first version blog
+- wednesday: Laracast lesson 8-15, userstory W3-002, first online demo with Heroku
 - thursday: 
 - friday:
 
