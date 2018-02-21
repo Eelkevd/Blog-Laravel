@@ -37,14 +37,16 @@ class ArticlesController extends Controller
 
     	// create a new article/blog
 
-    	$article = new Article;
+        Article::create(request(['title', 'bodytext']));
 
-    	$article->title = request('title');
+    	//$article = new Article;
 
-    	$article->bodytext = request('bodytext');
+    	//$article->title = request('title');
+
+    	//$article->bodytext = request('bodytext');
 
     	// save into the database
-    	$article->save();
+    	///$article->save();
 
     	return redirect('articles/home');
     }

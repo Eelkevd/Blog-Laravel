@@ -9,11 +9,13 @@
 
             
 
-            <!--@foreach ($articles as $article)
+            @foreach ($articles as $article)
 
-                <li>{{$article->bodytext}}</li>
+            	<div>{{$article->title}}</div>
+                <div>{{$article->bodytext}}</div>
+                <br/>
 
-            @endforeach -->
+            @endforeach
 
         </ul>
 
