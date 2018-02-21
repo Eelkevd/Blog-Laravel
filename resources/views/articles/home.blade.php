@@ -1,5 +1,5 @@
 
-@extends ('layouts.layout')
+@extends ('Layouts.layout')
 
 	@section ('header')
 
