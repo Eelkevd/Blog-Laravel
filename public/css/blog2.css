@@ -60,6 +60,13 @@ body {
 	color: white;
 }
 
+/* error css */
+
+#errorForm {
+	list-style: none;
+	background-color: red;
+}
+
 /* Style the top navigation bar */
 .topnav {
     overflow: hidden;
@@ -83,7 +90,3 @@ body {
     color: black;}
 }
 
-#error {
-	list-style: none;
-	background-color: red;
-}

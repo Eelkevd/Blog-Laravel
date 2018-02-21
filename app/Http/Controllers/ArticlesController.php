@@ -17,6 +17,8 @@ class ArticlesController extends Controller
 
       public function show(Article $article)
     {
+        //dd($article);
+
 		//$article = DB::table('articles')->find($id);
 
 		//$article = Article::find($id);

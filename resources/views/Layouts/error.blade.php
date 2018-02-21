@@ -4,7 +4,7 @@
 
 		<div class="alert">
 
-			<ul id="error">
+			<ul>
 
 				@foreach ($errors->all() as $error)
 

@@ -17,9 +17,7 @@
 
             @foreach ($articles as $article)
 
-            	<div>{{$article->title}}</div>
-                <div>{{$article->bodytext}}</div>
-                <br/>
+            	@include('articles.article')
 
             @endforeach
 

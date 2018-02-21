@@ -3,6 +3,12 @@
 
     @section ('content')
 
-                <h1>{{ $article->bodytext }}</h1>
+    <div>
+
+        <h1>{{ $article -> title }}</h1>
+
+        {{ $article -> bodytext }}
+
+    </div>
 
     @endsection
