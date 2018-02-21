@@ -59,3 +59,31 @@ body {
 	background-color: black;
 	color: white;
 }
+
+/* Style the top navigation bar */
+.topnav {
+    overflow: hidden;
+	text-align: center; 
+}
+
+/* Style the topnav links */
+.topnav a {
+	background-color:  gray;
+    display: inline-block;
+    width: 100px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+    background-color: rgb(224, 224, 224);
+    color: black;}
+}
+
+#error {
+	list-style: none;
+	background-color: red;
+}

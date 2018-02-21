@@ -36,6 +36,13 @@ class ArticlesController extends Controller
     public function store() {
 
     	// create a new article/blog
+        $this->validate(request(), [
+
+            'title'  => 'required',
+
+            'bodytext'  => 'required'
+
+        ]);
 
         Article::create(request(['title', 'bodytext']));
 

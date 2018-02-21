@@ -18,7 +18,16 @@
     </head>
     <body>
 
+
+        @yield('header')
+
+        @include('Layouts.header')
+
+        
+
         @yield('content')
+
+        @include('Layouts.footer')
 
     </body>
 </html>

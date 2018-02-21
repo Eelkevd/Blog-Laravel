@@ -22,6 +22,9 @@
 					 <br />
 					 <input type="submit" id="btnSubBlog" align="center">
 				</div>
+
+				@include('Layouts.error')
+				
 			</form>
 
     @endsection
