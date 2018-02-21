@@ -9,9 +9,19 @@
 
         {{ $article -> bodytext }}
 
-        <br/>
 
-        <a href= \articles/home>Cancel</a>
+          <hr> 
+
+          <div class="categories">
+    		@foreach ($article->categories as $category)
+
+    			<li class="list-group-item">
+    				{{ $category->category}}
+    			</li>
+    		@endforeach
+    		</div>
+
+        <br/>
 
     </div>
 

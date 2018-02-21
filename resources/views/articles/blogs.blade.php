@@ -1,20 +1,14 @@
 
 @extends ('layouts.layout')
-
-	@section ('header')
-
-	<h1> WELCOME HOME </h1>
-
-	@endsection
         
     @section ('content')
 
-    
+    <h1> Read all blogs </h1>
+
     <div id="blogOverview">
         <ul>
 
             
-
             @foreach ($articles as $article)
 
             	@include('articles.article')
