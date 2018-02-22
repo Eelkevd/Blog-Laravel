@@ -11,36 +11,20 @@
 |
 */
 
+// Routes/Router: An overview of all the webpages and their controller page
+// The home pages
 Route::get('/articles', 'ArticlesController@home');
-
-/*Route::get('/articles', function () {
-
-	//$articles = DB::table('articles')->get();
-
-	$articles = Article::all();
-
-    return view('articles.home', compact('articles'));
-});*/
-
-//Route::get('/articles/{article}', 'ArticlesController@show');
-
-/*Route::get('/articles/{article}', function ($id) {
-
-	//$article = DB::table('articles')->find($id);
-
-	$article = Article::find($id);
-
-    return view('articles.show', compact('article'));
-});*/
-
-Route::get('/articles/create', 'ArticlesController@create');
-
 Route::get('/articles/home', 'ArticlesController@home');
 
+// The overview page with all blogs
 Route::get('/articles/blogs', 'ArticlesController@blogs');
 
+// Pages to create and store a new blog
+Route::get('/articles/create', 'ArticlesController@create');
 Route::post('/articles', 'ArticlesController@store');
 
+// Page of specific blog
 Route::get('/articles/{article}', 'ArticlesController@show');
 
+// Page to create and store a new comment
 Route::post('/articles/{article}/comments', 'CommentsController@store');

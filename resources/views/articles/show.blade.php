@@ -4,16 +4,14 @@
     @section ('content')
 
     <div>
-
+    	 <!-- The view to show individual blogs, their categories and their comment section -->
         <h1>{{ $article -> title }}</h1>
         {{ $article -> bodytext }}
 
-
         <hr> 
-        	<!--Show comments-->
+        	<!--Show all categories-->
             <div class="categories">
     		@foreach ($article->categories as $category)
-
     			<li class="list-group-item">
     				{{ $category->category}}
     			</li>
@@ -21,19 +19,17 @@
     		</div>
 
     	<hr>
-    		<!--Show comments-->
+    		<!--Show all comments-->
     		<div class="comments">
     		@foreach ($article->comments as $comment)
-
     			<li class="list-group-item">
     				{{ $comment->body}}
     			</li>
     		@endforeach
     		</div>
 
-    		<!--Add a comment-->
-    		<hr>
-
+    	<hr>
+			<!--Add a comment-->
     		<div class="card">
     			<div class="card-block">
     				<form method="POST" action="/articles/{{ $article->id }}/comments">
