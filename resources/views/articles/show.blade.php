@@ -8,16 +8,6 @@
         <h1>{{ $article -> title }}</h1>
         {{ $article -> bodytext }}
 
-        <hr> 
-        	<!--Show all categories-->
-            <div class="categories">
-    		@foreach ($article->categories as $category)
-    			<li class="list-group-item">
-    				{{ $category->category}}
-    			</li>
-    		@endforeach
-    		</div>
-
     	<hr>
     		<!--Show all comments-->
     		<div class="comments">

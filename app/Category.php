@@ -2,12 +2,18 @@
 
 namespace App;
 
-// Model page for the categories
+use Illuminate\Database\Eloquent\Model;
+
 class Category extends Model
 {
-	// Couple category with articles
-    public function post()
+    public function articles()
     {
-    	return $this->belongsTo(Article::class);
+    	return $this->belongsToMany(Article::class);
     }
+
+    public function getRouteKeyName()
+    {
+    	return 'name';
+    }
+
 }

@@ -28,3 +28,5 @@ Route::get('/articles/{article}', 'ArticlesController@show');
 
 // Page to create and store a new comment
 Route::post('/articles/{article}/comments', 'CommentsController@store');
+
+Route::get('/articles/categories/{category}','CategoriesController@home');
