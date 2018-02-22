@@ -12,7 +12,7 @@ A blog apllication build with laravel based on the userstories as described in t
 - monday: Install laravel, made shared Trello, Github repository
 - tuesday: Laracast lesson 1-7, userstory W3-001, layout first version blog
 - wednesday: Laracast lesson 8-15, userstory W3-002, first online demo with Heroku
-- thursday: 
+- thursday: Laracast lesson 16, userstory W4-002,
 - friday:
 
 ## Look for the latest online demo at: https://sheltered-reef-90572.herokuapp.com/articles/home
@@ -29,8 +29,15 @@ The Userstories of the CodeGorilla assignment for week 6 (in Dutch):
 - W3-007 Blogger:    De tekst in het artikel kunnen formateren (bijv. vet gedrukt of cursief maken)
 - W3-008 Blogger:    Een afbeeldingen in een artikel kunnen plaatsen.
 
+- W4-001 Blogger:    Een text-expander die als ik een artikel aan het schrijven ben door mij zelf gedefinieerde afkortingen die ik type direct omzet in de volledige tekst.
+- W4-002 Lezer:      Anoniem commentaar kunnen geven op een artikel.
+- W4-003 Lezer:      Artikelen in een bepaalde categorie kunnen selecteren met behulp van een kolom zonder dat de pagina opnieuw wordt ingelezen.
+- W4-004 Blogger:    Ongewenst commentaar kunnen verwijderen.
+- W4-005 Blogger:    Voor een artikel kunnen instellen dat geen commentaar kan worden gegeven.
+
 ## Finished userstories
 - W3-001
 - W3-002
+- W4-002
 
 # Screenshots
