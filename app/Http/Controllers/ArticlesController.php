@@ -3,6 +3,7 @@
 // Controller of the articles
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Article;
 use Illuminate\Http\Request;
 
@@ -30,7 +31,8 @@ class ArticlesController extends Controller
      // Function to go back to homepage
     public function categories()
     {
-        return view('articles.categories');
+        $categories = Category::get();
+        return view('articles.categories', compact('categories'));
     }
 
     // Function to create new blog
