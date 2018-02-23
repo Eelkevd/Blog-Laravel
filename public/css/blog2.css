@@ -75,14 +75,29 @@ body {
 .topnav {
     overflow: hidden;
 	text-align: center; 
+	display: inline-block;
+
 }
+
+/* Style the added categories */
+.catnav a {
+	background-color:  gray;
+	margin-bottom: 2px;
+    display: inline-block;
+    width: 130px;
+    color: rgb(0, 0, 0);
+    font-size: 80%;
+    text-align: center;
+    padding: 4px 6px;
+    text-decoration: none;
+}	
 
 /* Style the topnav links */
 .topnav a {
 	background-color:  gray;
     display: inline-block;
-    width: 100px;
-    color: rgb(0, 0, 0);
+    width: 130px;
+    color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;

@@ -1,5 +1,4 @@
-	<div class="topnav">
-
+	<div class="catnav">
 
 				<a href="/articles/categories/{{ $category -> name }}">
 

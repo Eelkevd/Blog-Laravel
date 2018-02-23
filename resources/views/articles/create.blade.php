@@ -15,7 +15,13 @@
 
 		<!-- Checkboxes for categories WORK IN PROGRESS -->
 		<div id="categoryBoxes">
-			<input type="checkbox" id="FireCheckB" name="subscribe[]" value="1">
+			@foreach($categories as $category)
+				<input type="checkbox" id="FireCheckB" name="subscribe[]" value="{{ $category->id }}">
+				<label for="subscribeNews">{{ $category->name }}</label>
+			@endforeach()
+
+
+			<!--<input type="checkbox" id="FireCheckB" name="subscribe[]" value="1">
 		    <label for="subscribeNews">Fire</label>
 		    <input type="checkbox" id="WaterCheckB" name="subscribe[]" value="2">
 		    <label for="subscribeNews">Water</label>
@@ -24,7 +30,7 @@
 		    <input type="checkbox" id="EarthCheckB" name="subscribe[]" value="4">
 		    <label for="subscribeNews">Earth</label>
 		    <input type="checkbox" id="BlogtalkCheckB" name="subscribe[]" value="5">
-		    <label for="subscribeNews">Blogtalk</label>
+		    <label for="subscribeNews">Blogtalk</label>-->
 		</div>
 
 		<textarea name="bodytext" id="blogText" placeholder="Type your article"></textarea>

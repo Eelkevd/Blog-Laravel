@@ -38,7 +38,8 @@ class ArticlesController extends Controller
     // Function to create new blog
     public function create()
     {
-	    return view('articles.create');
+        $categories = Category::all();
+	    return view('articles.create', compact('categories'));
     }
 
     // Function to validate & store new blog in database and redirects to homepage
