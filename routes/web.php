@@ -16,6 +16,10 @@
 Route::get('/articles', 'ArticlesController@home');
 Route::get('/articles/home', 'ArticlesController@home');
 
+// Create a category
+Route::get('/articles/createcategory', 'CategoriesController@create');
+Route::post('/articles/createcategory', 'CategoriesController@store');
+
 // The overview page with all blogs
 Route::get('/articles/blogs', 'ArticlesController@blogs');
 
@@ -32,4 +36,7 @@ Route::get('/articles/{article}', 'ArticlesController@show');
 Route::post('/articles/{article}/comments', 'CommentsController@store');
 
 Route::get('/articles/categories/{category}','CategoriesController@home');
+
+
+
 
