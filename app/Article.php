@@ -6,7 +6,7 @@ namespace App;
 class Article extends Model
 {
 	// Couple categories with articles
-	public function articles()
+	public function categories()
 	{
 		return $this->belongsToMany(Category::class);
 	}

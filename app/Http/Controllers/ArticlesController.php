@@ -4,6 +4,7 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use Illuminate\Http\Request;
 
 class ArticlesController extends Controller
 {
@@ -33,14 +34,19 @@ class ArticlesController extends Controller
     }
 
     // Function to validate & store new blog in database and redirects to homepage
-    public function store() 
+    public function store(Request $request) 
     {
     	// create a new article/blog
-        $this->validate(request(), [
+        $request->validate([
             'title'  => 'required',
             'bodytext'  => 'required'
         ]);
-        Article::create(request(['title', 'bodytext']));
+
+        //dd($request);
+
+        $article = Article::create(request(['title', 'bodytext']));
+        $article->categories()->attach($request->subscribe);
+
     	return redirect('articles/home');
     }
 }

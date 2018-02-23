@@ -12,14 +12,18 @@
 		<input type="text" name="title" placeholder="title" id="blogTitle"> <br />
 
 		<!-- Checkboxes for categories WORK IN PROGRESS -->
-		<!--<div id="categoryBoxes">
-		<input type="checkbox" id="sportsCheckB" name="subscribe" value="sports">
-	    <label for="subscribeNews">Sports</label>
-	    <input type="checkbox" id="natureCheckB" name="subscribe" value="nature">
-	    <label for="subscribeNews">Nature</label>
-	    <input type="checkbox" id="politicsCheckB" name="subscribe" value="politics">
-	    <label for="subscribeNews">Politics</label>
-		</div>-->
+		<div id="categoryBoxes">
+			<input type="checkbox" id="FireCheckB" name="subscribe[]" value="1">
+		    <label for="subscribeNews">Fire</label>
+		    <input type="checkbox" id="WaterCheckB" name="subscribe[]" value="2">
+		    <label for="subscribeNews">Water</label>
+		    <input type="checkbox" id="AirCheckB" name="subscribe[]" value="3">
+		    <label for="subscribeNews">Air</label>
+		    <input type="checkbox" id="EarthCheckB" name="subscribe[]" value="4">
+		    <label for="subscribeNews">Earth</label>
+		    <input type="checkbox" id="BlogtalkCheckB" name="subscribe[]" value="5">
+		    <label for="subscribeNews">Blogtalk</label>
+		</div>
 
 		<textarea name="bodytext" id="blogText" placeholder="Type your article"></textarea>
 		<br />
