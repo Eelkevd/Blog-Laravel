@@ -15,16 +15,18 @@ class CreateCategoriesTable extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('category');
+            $table->string('name');
             $table->timestamps();
         });
 
         Schema::create('article_category', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('article_id');
-            $table->integer('category_id');
+            $table->integer('article_id')->unsigned();
+            $table->integer('category_id')->unsigned();
             $table->timestamps();
-            $table->primary(['article_id', 'category_id']);
+            $table->foreign('article_id')->references('id')->on('articles');
+            $table->foreign('category_id')->references('id')->on('categories');
+            //$table->primary(['article_id', 'category_id']);
         });
     }
 
