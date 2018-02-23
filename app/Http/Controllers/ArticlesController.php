@@ -27,6 +27,12 @@ class ArticlesController extends Controller
         return view('articles.home');
     }
 
+     // Function to go back to homepage
+    public function categories()
+    {
+        return view('articles.categories');
+    }
+
     // Function to create new blog
     public function create()
     {

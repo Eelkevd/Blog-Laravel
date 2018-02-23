@@ -5,6 +5,7 @@
 		<a href="/articles/{{ $article->id }}">
 
 			{{ $article -> title }}
+			
 		</a>
 	</h2>
 

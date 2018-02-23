@@ -11,6 +11,8 @@
     <div id="blogPage">
 		<input type="text" name="title" placeholder="title" id="blogTitle"> <br />
 
+
+
 		<!-- Checkboxes for categories WORK IN PROGRESS -->
 		<div id="categoryBoxes">
 			<input type="checkbox" id="FireCheckB" name="subscribe[]" value="1">
