@@ -1,8 +1,9 @@
-	<div class="catnav">
+<div class="catnav">
 
-				<a href="/articles/categories/{{ $category -> name }}">
+	<a href="/articles/categories/{{ $category -> name }}">
 
-					{{ $category -> name }}
+		{{ $category -> name }}
 			
-				</a>
-	</div> 
+	</a>
+	
+</div> 

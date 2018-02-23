@@ -9,13 +9,18 @@
  	<h1> Create category </h1>
 
     <form method="POST" action="/articles/createcategory">
+    	
 	{{ csrf_field() }}
 
-    <div id="blogPage">
-		<input type="text" name="name" placeholder="category name" id="blogTitle"> <br />
-		<br />
-		<input type="submit" id="btnSubBlog" align="center" value="submit">
-	</div>
+	    <div id="blogPage">
+
+			<input type="text" name="name" placeholder="category name" id="blogTitle"> <br />
+
+			<br />
+
+			<input type="submit" id="btnSubBlog" align="center" value="submit">
+
+		</div>
 
 	@include('layouts.error')
 

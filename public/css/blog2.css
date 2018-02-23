@@ -7,7 +7,8 @@ body {
 	text-align: center; 
 	}
 
-#blogText{
+/* Style the blog bodytext //// DOESNT WORK ////  */
+#blogText {
 	height: 400px;
 	max-height: 800px;
 	max-width: 600px;
@@ -23,16 +24,19 @@ body {
 	padding: 3px;
 }
 
+/* Style the page where the blogs are created */
 #blogPage{
     position: relative;
     background-color: gray;
    	text-align: center; 
 }
 
+/* Style the page where  blogs are displayed */
 #blogOverview {
 	background-color: white;
 }
 
+/* Style the title of blogs */
 #blogTitle{
 	margin-top: 20px;
 	margin-bottom: 20px;
@@ -48,6 +52,7 @@ body {
 	border-top: 1px solid ;
 }
 
+/* Style the blog submit button */
 #btnSubBlog {
 	background-color: white;
 	padding: 5px;
@@ -59,13 +64,13 @@ body {
 	border-style: none;
 }
 
+/* Style the blog submit button on mousehover */
 #btnSubBlog:hover {
 	background-color: black;
 	color: white;
 }
 
-/* error css */
-
+/* Style the errors //// DOESNT WORK ////  */
 #errorForm {
 	list-style: none;
 	background-color: red;

@@ -12,6 +12,7 @@
 */
 
 // Routes/Router: An overview of all the webpages and their controller page
+
 // The home pages
 Route::get('/articles', 'ArticlesController@home');
 Route::get('/articles/home', 'ArticlesController@home');
@@ -35,6 +36,7 @@ Route::get('/articles/{article}', 'ArticlesController@show');
 // Page to create and store a new comment
 Route::post('/articles/{article}/comments', 'CommentsController@store');
 
+// Page to blog selected from category
 Route::get('/articles/categories/{category}','CategoriesController@home');
 
 

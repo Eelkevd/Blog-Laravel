@@ -7,6 +7,7 @@
     <h1> Read all blogs </h1>
 
     <div id="blogOverview">
+
         <ul>
 
             @foreach ($articles as $article)
@@ -17,6 +18,7 @@
             @endforeach
 
         </ul>
+        
     </div>
 
     @endsection
