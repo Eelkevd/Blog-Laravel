@@ -47,3 +47,7 @@ The Userstories of the CodeGorilla assignment for week 6 (in Dutch):
 - W4-002
 
 # Screenshots
+
+![Alt text](https://github.com/Eelkevd/Blog-Laravel/blob/master/BlogCreatepage.png?raw=true "Blog create page")
+
+![Alt text](https://github.com/Eelkevd/Blog-Laravel/blob/master/BlogCategorypage.png?raw=true "Blog create page")
