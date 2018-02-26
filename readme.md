@@ -1,5 +1,5 @@
 # Laravel blog Eelke, Jorik & Esmeralda
-### Blog week 6
+### Blog week 7
 A blog application to share your writings and comments with the world!
 A pair programming collaboration of Eelke, Jorik & Esmeralda, both working mostly on Eelke's laptop and github account (although Jorik and Esmeralda are collaborators on that github account). 
 
@@ -30,6 +30,24 @@ The Userstories of the CodeGorilla assignment for week 6 (in Dutch):
 - W6-006 Blogger:    Dat de wachtwoorden op een veilige manier worden opgeslagen in de database.
 - W6-007 Lezer:      De mogelijkheid hebben om een nieuw wachtwoord aan te vragen. Via email ontvang ik daarvoor een link om het wachtwoord te kunnen wijzigen.
 - W6-008 Lezer:      in de linkerkolom een lijstje hebben met maanden zien waarin artikelen gepubliceerd zijn. Als ik op een maand klik worden de betreffende         artikelen getoond.
+- W6-009 Eigenaar:   wil ik de functionaliteit die ik nu voor mijn eigen blog heb ontwikkeld gaan gebruiken als basis voor een blog platform waar meerdere bloggers gebruik van kunnen maken.
+- W6-010 Blogger     wil ik geïnformeerd worden over de mogelijkheden om op het blogplatform zelf een blog bij te gaan houden.
+- W6-011 Blogger     wil ik mij registreren als blogger op het platform. Daarbij mag ik zelf de naam van mijn blog bepalen. Deze naam moet uniek zijn.
+- W6-012 Blogger     wil ik mijn artikelen kunnen beheren: nieuwe artikelen schrijven, artikelen wijzigen, artikelen verwijderen, commentaar verbergen, commentaar stoppen voor een bepaald artikel.
+- W6-013 Blogger     kan ik een afbeelding uploaden die wordt gebruikt als header boven mijn blog.
+- W6-014 Blogger     wil ik een email ontvangen als iemand commentaar geeft op een artikel.
+- W6-015 Lezer       wil ik kunnen zien welke nieuwe artikelen op de verschillende blogs zijn geplaatst.
+- W6-016 Lezer       kan ik me abonneren op een blog en krijg ik een email als er een nieuwe artikel van een blogger verschijnt.
+
+- W7-001 Eigenaar    wil ik maandelijks geld gaan vragen voor het hosten van een blog voor een blogger. Bloggers kunnen gratis 5 artikelen plaatsen om het platform te testen. Indien je meer artikelen wilt plaatsen betaal je eenmalig 9,99.
+- W7-002 Blogger     wil ik eerst gratis vijf artikelen kunnen plaatsen zodat ik het platform kan uitproberen.
+- W7-003 Blogger     wil ik mijzelf kunnen aanmelden voor de betaalde dienst. Het enige dat ik hoef door te geven zijn mijn bankgegevens.
+- W7-004 Eigenaar    wil ik 1x per maand een Excel spreadsheet kunnen genereren die ik kan gebruiken om het maandelijkse incasso bestand voor de bank te kunnen maken. Ik maar hiervoor gebruik van de website sepatool.nl die het echte incasso bestand maakt.
+- W7-005 Eigenaar    wil ik maandelijks een email naar alle betaalde bloggers sturen met daarin de hun factuur. op dit moment is het alleen de eerste keer een factuur met een eenmalige fee.
+- W7-006 Eigenaar    wil ik de blogger de mogelijkheid bieden om via een credit-card de automatisch incasso te doen.
+- W7-007 Eigenaar    wil ik een aantal veiligheidstests (een test op query-injection) kunnen uitvoeren op mijn blog.
+- W7-008 Lezer       wil ik uit meerdere talen kunnen kiezen zodat lezers uit verschillende landen mijn blog in hun eigen taal kunnen lezen.
+- W7-009 Eigenaar    wil ik vanuit de backend een backup van alle weblogs kunnen maken in de vorm van een database dump.
 
 ## Finished userstories
 
@@ -40,7 +58,7 @@ The Userstories of the CodeGorilla assignment for week 6 (in Dutch):
 
 ![Alt text](https://github.com/Eelkevd/Blog-Laravel/blob/master/BlogCategorypage.png?raw=true "Blog create page")
 
-### Archive Week 6
+### ARCHIVE Week 6
 Old Trello from week 6: https://trello.com/b/vLQRY9Jd/blog-laravel
 
 # Workflow week 6:
