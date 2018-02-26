@@ -14,6 +14,7 @@
 // Routes/Router: An overview of all the webpages and their controller page
 
 // The home pages
+Route::get('/', 'ArticlesController@home');
 Route::get('/articles', 'ArticlesController@home');
 Route::get('/articles/home', 'ArticlesController@home');
 
