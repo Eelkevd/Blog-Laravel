@@ -44,3 +44,7 @@ Route::get('/articles/categories/{category}','CategoriesController@home');
 
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
