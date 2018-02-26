@@ -17,6 +17,7 @@
             	<!-- Links to blog.blade.php view -->
             	@include('blogs.blog')
 
+
             @endforeach
 
         </ul>
