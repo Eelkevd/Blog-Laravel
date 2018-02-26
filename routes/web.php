@@ -18,6 +18,15 @@ Route::get('/', 'ArticlesController@home');
 Route::get('/articles', 'ArticlesController@home');
 Route::get('/articles/home', 'ArticlesController@home');
 
+<<<<<<< Updated upstream
+=======
+// Page of specific blog
+Route::get('/blogs/{user}', 'BlogController@show');
+// Pages to create and store a new blog
+Route::get('/blogs/create', 'BlogController@create');
+Route::post('/blogs', 'BlogsController@store');
+
+>>>>>>> Stashed changes
 // Create a category
 Route::get('/articles/createcategory', 'CategoriesController@create');
 Route::post('/articles/createcategory', 'CategoriesController@store');

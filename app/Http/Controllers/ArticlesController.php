@@ -12,7 +12,7 @@ class ArticlesController extends Controller
     // Function to get all blogs with latest on top
     public function blogs()
     {
-		$articles = Article::latest()->get();
+		  $articles = Article::latest()->get();
     	return view('articles.blogs', compact('articles'));
     }
 
@@ -43,7 +43,7 @@ class ArticlesController extends Controller
     }
 
     // Function to validate & store new blog in database and redirects to homepage
-    public function store(Request $request) 
+    public function store(Request $request)
     {
     	// create a new article/blog
         $request->validate([
