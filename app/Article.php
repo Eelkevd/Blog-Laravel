@@ -23,4 +23,8 @@ class Article extends Model
 		$this->comments()->create(compact('body'));
 	}
 
+	public function blogs()
+	{
+		return $this->belongsTo(Blog::class);
+	}
 }
