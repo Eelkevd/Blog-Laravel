@@ -18,7 +18,7 @@ Route::get('/home', 'HomeController@index');
 // The home pages
 // Page of specific blog
 Route::get('/blogs/{user}', 'BlogController@show');
-=======
+
 Route::get('/', 'BlogController@index')->name('home');
 Route::get('/articles', 'ArticlesController@home');
 Route::get('/articles/home', 'ArticlesController@home');
