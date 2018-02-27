@@ -3,7 +3,7 @@
     @section ('content')
 
     <!-- The view to create new blogs/articles -->
-    <h1>Create a Post</h1>
+    <h1>Create your article</h1>
 
     <form method="POST" action="/articles">
 	{{ csrf_field() }}
