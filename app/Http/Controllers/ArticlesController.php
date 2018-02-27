@@ -10,6 +10,12 @@ use Illuminate\Http\Request;
 
 class ArticlesController extends Controller
 {
+
+public function __construct()
+    {
+        $this->middleware('auth', ['only' => 'create']);
+    }
+
     // Function to get all blogs with latest on top
     public function blogs()
     {

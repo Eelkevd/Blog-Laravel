@@ -13,7 +13,7 @@
 
 // Routes/Router: An overview of all the webpages and their controller page
 Auth::routes();
-Route::get('/home', 'HomeController@index');
+Route::get('/', 'HomeController@index');
 
 Route::get('/', 'BlogController@index')->name('home');
 Route::get('/articles', 'ArticlesController@home');
