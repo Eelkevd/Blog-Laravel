@@ -4,6 +4,9 @@
 
     <!-- Count the number of articles with this blogs
           if = 5 show alert PAY -->
+          @if
+            {{ $num_articles = 5 }}  
+
 
 
     <!-- The view to create new blogs/articles -->
