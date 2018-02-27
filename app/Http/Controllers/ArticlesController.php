@@ -42,7 +42,7 @@ class ArticlesController extends Controller
       $userid = Auth::id();
       $num_articles = Article::where('user_id', $userid)->count();
       $categories = Category::all();
-	    return view('articles.create', compact('num_articles', 'categories'));
+	    return view('articles.create', compact('userid', 'num_articles', 'categories'));
     }
 
     // Function to validate & store new blog in database and redirects to homepage

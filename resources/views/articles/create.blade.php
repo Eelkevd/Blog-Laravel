@@ -4,9 +4,6 @@
 
     <!-- Count the number of articles with this blogs
           if = 5 show alert PAY -->
-          @if
-            {{ $num_articles = 5 }}  
-
 
 
     <!-- The view to create new blogs/articles -->
@@ -17,8 +14,8 @@
 
   <!-- hidden hardcoded blog_id
         Needs to be the blog id from the user that is logged in-->
-    <input type="hidden" name="blog_id" id="blog_id" value="1">
-    <input type="hidden" name="user_id" id="user_id" value="1">
+    <input type="hidden" name="blog_id" id="blog_id" value="{{ $userid }}">
+    <input type="hidden" name="user_id" id="user_id" value="{{ $userid }}">
 
     <div id="blogPage">
 
