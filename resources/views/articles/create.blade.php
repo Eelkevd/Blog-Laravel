@@ -1,13 +1,18 @@
 @extends ('layouts.layout')
 
     @section ('content')
-    
+
     <!-- The view to create new blogs/articles -->
     <h1>Create a Post</h1>
 
     <form method="POST" action="/articles">
 	{{ csrf_field() }}
 
+  <!-- hidden hardcoded blog_id
+        Needs to be the blog id from the user that is logged in-->
+    <input type="hidden" name="blog_id" id="blog_id" value="1">
+    <input type="hidden" name="user_id" id="user_id" value="1">
+    
     <div id="blogPage">
 
 		<input type="text" name="title" placeholder="title" id="blogTitle"> <br />
@@ -29,7 +34,7 @@
 		<br />
 
 		<input type="submit" id="btnSubBlog" align="center" value="submit">
-		
+
 	</div>
 
 	@include('layouts.error')

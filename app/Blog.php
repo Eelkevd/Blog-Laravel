@@ -17,7 +17,7 @@ class Blog extends Model
     // the author of the blog where this article belongs to:
     // $article->post-user
     {
-      return $this->belongsToMany(Article::class);
+      return $this->hasMany(Article::class);
     }
 
 }

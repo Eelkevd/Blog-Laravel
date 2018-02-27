@@ -1,19 +1,30 @@
-
 @extends ('layouts.layout')
 
     @section ('content')
+<div  id="blogOverview">
 
-    <div  id="blogOverview">
-    	 <!-- The view to show the articles within a blog-->
-        <h1>{{ $blog -> title }}</h1>
+	<!-- The view to show the blog titles as links and publishing the description  -->
 
-        <div>
-    	<hr>
-        </div>
+ 	<h2 class="article-title">
 
-          {{ $blog -> subject }}
+			{{ $blog -> title }}
 
-      </div>
-    </div>
-<hr>
-    @endsection
+	</h2>
+
+	<h3>By blogger:
+ 			{{ $blog->user->name }}
+	</h3>
+
+	<p class="article-text"><strong><em>Description:</em></strong><br />
+
+		{{ $blog -> subject }}
+		<br />
+	</p>
+  <hr>
+  @foreach($blog->articles as $artcile)
+   <span>{{{ $artcile->title }}}</span>
+   <p class=”lead”>{{{ $artcile->bodytext }}}</p>
+   <hr>
+   @endforeach
+</div>
+@endsection

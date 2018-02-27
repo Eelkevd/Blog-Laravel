@@ -21,6 +21,7 @@ class CreateArticlesTable extends Migration
             $table->text('bodytext');
             $table->timestamps();
         });
+
     }
 
     /**

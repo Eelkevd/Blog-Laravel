@@ -2,7 +2,7 @@
 
 // Controller of the articles
 namespace App\Http\Controllers;
-
+use App\Blog;
 use App\Category;
 use App\Article;
 use Illuminate\Http\Request;
@@ -53,7 +53,7 @@ class ArticlesController extends Controller
 
         //dd($request);
 
-        $article = Article::create(request(['title', 'bodytext']));
+        $article = Article::create(request(['blog_id', 'user_id', 'title', 'bodytext']));
         $article->categories()->attach($request->subscribe);
 
     	return redirect('articles/home');
