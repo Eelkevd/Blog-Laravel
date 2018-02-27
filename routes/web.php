@@ -47,11 +47,3 @@ Route::post('/articles/{article}/comments', 'CommentsController@store');
 
 // Page to artilcle selected from category
 Route::get('/articles/categories/{category}','CategoriesController@home');
-<<<<<<< HEAD
-
-//Route::get('')
-
-
-
-=======
->>>>>>> develop

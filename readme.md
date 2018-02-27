@@ -11,7 +11,7 @@ A blog apllication build with laravel based on the userstories as described in t
 On the homepage there is not much to see, but you can go to the "Blogs" page, the "Categories" page, the "Create category" page or the "Create blog" page. The Blogs page is the overview page with all the blog titles and publishing dates. The reader can click on each title to go to the page of the specific blog to read the blog or/and leave a comment to the specific blog. The comments will be displayed below the blog text on the page of the blog. The Categories page is the place to find all blogs of a certain category. Select one of the categories and get an overview page like the Blog page with only the blogs of that category. At the Create category page you can create your own category, so you or others are able to create a blog and adjust it to your new unique created category! Last but not least, at the Create blog page you can write your own blog with a title & blog text, adjust it to one or more categories with the checkboxes and submit it to the database so everbody can read your blog!
 
 ### Workflow
-- monday: 
+- monday: read new userstories, made new shared Trello, updated old Github repository and readme, Userstory W6-006, W6-002 work in progress;
 - tuesday:
 - wednesday: 
 - thursday: 
@@ -50,7 +50,7 @@ The Userstories of the CodeGorilla assignment for week 6 (in Dutch):
 - W7-009 Eigenaar    wil ik vanuit de backend een backup van alle weblogs kunnen maken in de vorm van een database dump.
 
 ## Finished userstories
-
+- W6-006
 
 # Screenshots
 
