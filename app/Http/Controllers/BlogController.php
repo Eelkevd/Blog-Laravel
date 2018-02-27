@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use \App\Article;
 use \App\User;
-use \App\Blog;
-
+use \App\Blog; 
 
 class BlogController extends Controller
 {
@@ -25,16 +25,10 @@ class BlogController extends Controller
 	public function show(Blog $blog)
 		{
 			$articles = $blog->articles->sortByDesc('created_at');
-			//$blog = Blog::find($blog->id)->with('articles')->get();
-	//		$blog = DB::table('blogs')->where('id', '=', $blog->id)->get();
-			//$articles = DB::table('articles')->where('blog_id', '=', $blog->id)->get();
-		//	$blog = Blog::find($blog->id)->get();
-
 			return view('blogs.show', compact('blog', 'articles'));
 		}
 
-
-		public function create()
+	public function create()
 		{
 
 			return view('blogs.create');
