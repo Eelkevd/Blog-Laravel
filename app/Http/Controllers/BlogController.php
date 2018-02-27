@@ -25,10 +25,6 @@ class BlogController extends Controller
 	public function show(Blog $blog)
 		{
 			$articles = $blog->articles->sortByDesc('created_at');
-			//$blog = Blog::find($blog->id)->with('articles')->get();
-	//		$blog = DB::table('blogs')->where('id', '=', $blog->id)->get();
-			//$articles = DB::table('articles')->where('blog_id', '=', $blog->id)->get();
-		//	$blog = Blog::find($blog->id)->get();
 
 			return view('blogs.show', compact('blog', 'articles'));
 		}

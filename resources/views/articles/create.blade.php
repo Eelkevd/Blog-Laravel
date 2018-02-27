@@ -4,9 +4,10 @@
 
     <!-- Count the number of articles with this blogs
     if = 5 show alert PAY -->
-    @if(  $num_articles = 5 )
+    @if(  $num_articles == 5 )
 
-      <p>Please put moenyu on your account to upload more than five articles</p>
+      <p>Please put money on your account to upload more than five articles</p>
+
 
     @else
 
@@ -19,7 +20,7 @@
         <div id="blogPage">
 
             <!-- log id from the user that is logged in-->
-            <input type="hidden" name="blog_id" id="blog_id" value="{{ $userid }}">
+            <input type="hidden" name="blog_id" id="blog_id" value="{{ $blog_id }}">
             <input type="hidden" name="user_id" id="user_id" value="{{ $userid }}">
 
             <input type="text" name="title" placeholder="title" id="blogTitle"> <br />

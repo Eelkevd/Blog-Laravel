@@ -42,13 +42,18 @@ public function __construct()
         return view('articles.categories', compact('num_articles', 'categories'));
     }
 
-    // Function to create new blog
+    // Function to create new article
     public function create()
     {
       $userid = Auth::id();
+
+  //    $blog=Auth::user()->blogs()->get());
+      $blog = Blog::where('user_id', $userid)->first();
+      $blog_id = $blog['id'];
+      
       $num_articles = Article::where('user_id', $userid)->count();
       $categories = Category::all();
-	    return view('articles.create', compact('userid', 'num_articles', 'categories'));
+	    return view('articles.create', compact('userid', 'blog_id', 'num_articles', 'categories'));
     }
 
     // Function to validate & store new blog in database and redirects to homepage
