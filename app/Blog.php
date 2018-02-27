@@ -20,4 +20,9 @@ class Blog extends Model
       return $this->hasMany(Article::class);
     }
 
+    public function blog()//
+    {
+        return $this->belongsTo(Blog::class);
+    }
+
 }
