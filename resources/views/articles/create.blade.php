@@ -2,6 +2,10 @@
 
     @section ('content')
 
+    <!-- Count the number of articles with this blogs
+          if = 5 show alert PAY -->
+
+
     <!-- The view to create new blogs/articles -->
     <h1>Create your article</h1>
 
@@ -12,7 +16,7 @@
         Needs to be the blog id from the user that is logged in-->
     <input type="hidden" name="blog_id" id="blog_id" value="1">
     <input type="hidden" name="user_id" id="user_id" value="1">
-    
+
     <div id="blogPage">
 
 		<input type="text" name="title" placeholder="title" id="blogTitle"> <br />

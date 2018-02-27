@@ -2,6 +2,7 @@
 
 // Controller of the articles
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Auth;
 use App\Blog;
 use App\Category;
 use App\Article;
@@ -32,13 +33,16 @@ class ArticlesController extends Controller
     public function categories()
     {
         $categories = Category::get();
-        return view('articles.categories', compact('categories'));
+        return view('articles.categories', compact('num_articles', 'categories'));
     }
 
     // Function to create new blog
     public function create()
     {
-        $categories = Category::all();
+      $userid = Auth::id();
+      $num_articles = Article::where('user_id', $userid)->get();
+      dd($num_articles);
+      $categories = Category::all();
 	    return view('articles.create', compact('categories'));
     }
 
@@ -58,4 +62,5 @@ class ArticlesController extends Controller
 
     	return redirect('articles/home');
     }
+
 }
