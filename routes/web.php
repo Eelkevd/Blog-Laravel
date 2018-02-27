@@ -12,11 +12,19 @@
 */
 
 // Routes/Router: An overview of all the webpages and their controller page
+Auth::routes();
+Route::get('/home', 'HomeController@index');
 
-// The home pages
-Route::get('/', 'ArticlesController@home');
+Route::get('/', 'BlogController@index')->name('home');
 Route::get('/articles', 'ArticlesController@home');
 Route::get('/articles/home', 'ArticlesController@home');
+
+// Page of specific blog
+Route::get('/blogs/{blog}', 'BlogController@show');
+
+// Pages to create and store a new blog
+Route::get('/blogs/create', 'BlogController@create');
+Route::post('/blogs', 'BlogsController@store');
 
 // Create a category
 Route::get('/articles/createcategory', 'CategoriesController@create');
@@ -27,20 +35,23 @@ Route::get('/articles/blogs', 'ArticlesController@blogs');
 
 Route::get('/articles/categories', 'ArticlesController@categories');
 
-// Pages to create and store a new blog
+// Pages to create and store a new article
 Route::get('/articles/create', 'ArticlesController@create');
 Route::post('/articles', 'ArticlesController@store');
 
-// Page of specific blog
+// Page of specific article
 Route::get('/articles/{article}', 'ArticlesController@show');
 
 // Page to create and store a new comment
 Route::post('/articles/{article}/comments', 'CommentsController@store');
 
-// Page to blog selected from category
+// Page to artilcle selected from category
 Route::get('/articles/categories/{category}','CategoriesController@home');
+<<<<<<< HEAD
 
 //Route::get('')
 
 
 
+=======
+>>>>>>> develop

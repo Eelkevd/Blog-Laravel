@@ -2,7 +2,7 @@
 
 // Controller of the articles
 namespace App\Http\Controllers;
-
+use App\Blog;
 use App\Category;
 use App\Article;
 use Illuminate\Http\Request;
@@ -12,7 +12,7 @@ class ArticlesController extends Controller
     // Function to get all blogs with latest on top
     public function blogs()
     {
-		$articles = Article::latest()->get();
+		  $articles = Article::latest()->get();
     	return view('articles.blogs', compact('articles'));
     }
 
@@ -43,7 +43,7 @@ class ArticlesController extends Controller
     }
 
     // Function to validate & store new blog in database and redirects to homepage
-    public function store(Request $request) 
+    public function store(Request $request)
     {
     	// create a new article/blog
         $request->validate([
@@ -53,7 +53,7 @@ class ArticlesController extends Controller
 
         //dd($request);
 
-        $article = Article::create(request(['title', 'bodytext']));
+        $article = Article::create(request(['blog_id', 'user_id', 'title', 'bodytext']));
         $article->categories()->attach($request->subscribe);
 
     	return redirect('articles/home');
