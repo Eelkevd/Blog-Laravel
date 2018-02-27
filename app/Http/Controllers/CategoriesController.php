@@ -13,7 +13,7 @@ class CategoriesController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     public function home(Category $category)
    	{
    		$articles = $category->articles;

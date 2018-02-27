@@ -41,7 +41,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="blog_subject" class="col-md-4 col-form-label text-md-right">Discription</label>
+                            <label for="blog_subject" class="col-md-4 col-form-label text-md-right">Description</label>
 
                             <div class="col-md-6">
                                 <input id="blogSubject" type="text" class="form-control{{ $errors->has('blog_subject  ') ? ' is-invalid' : '' }}" name="blog_subject" value="{{ old('blog_subject') }}" required>
