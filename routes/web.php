@@ -25,6 +25,7 @@ Route::get('/articles/home', 'ArticlesController@home');
 
 // Page of specific blog
 Route::get('/blogs/{blog}', 'BlogController@show');
+
 // Pages to create and store a new blog
 Route::get('/blogs/create', 'BlogController@create');
 Route::post('/blogs', 'BlogsController@store');

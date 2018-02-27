@@ -26,6 +26,31 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="title" class="col-md-4 col-form-label text-md-right">Blog name</label>
+
+                            <div class="col-md-6">
+                                <input id="title" type="text" class="form-control{{ $errors->has('title  ') ? ' is-invalid' : '' }}" name="title" value="{{ old('title') }}" required>
+
+                                @if ($errors->has('title'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('title') }}</strong>
+                                    </span>
+                                @endif
+
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="blog_subject" class="col-md-4 col-form-label text-md-right">Discription</label>
+
+                            <div class="col-md-6">
+                                <input id="blogSubject" type="text" class="form-control{{ $errors->has('blog_subject  ') ? ' is-invalid' : '' }}" name="blog_subject" value="{{ old('blog_subject') }}" required>
+
+
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
 
                             <div class="col-md-6">
@@ -60,6 +85,7 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
+
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
