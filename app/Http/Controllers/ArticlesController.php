@@ -3,6 +3,7 @@
 // Controller of the articles
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use App\Blog;
 use App\Category;
 use App\Article;
@@ -47,13 +48,17 @@ public function __construct()
     {
       $userid = Auth::id();
 
-  //    $blog=Auth::user()->blogs()->get());
+      //  $blog=Auth::user()->blogs()->get());
       $blog = Blog::where('user_id', $userid)->first();
       $blog_id = $blog['id'];
-      
+
       $num_articles = Article::where('user_id', $userid)->count();
+
       $categories = Category::all();
-	    return view('articles.create', compact('userid', 'blog_id', 'num_articles', 'categories'));
+
+      $payed =DB::table('users')->where('id', $userid)->pluck('payed')->first();
+
+      return view('articles.create', compact('userid', 'blog_id', 'num_articles', 'categories', 'payed'));
     }
 
     // Function to validate & store new blog in database and redirects to homepage

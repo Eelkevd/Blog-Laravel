@@ -4,12 +4,9 @@
 
     <!-- Count the number of articles with this blogs
     if = 5 show alert PAY -->
-    @if(  $num_articles == 5 )
 
-      @include ('paywall.bank')
+    @if( $num_articles < 5 OR $payed == '1' )
 
-    </div>
-    @else
 
       <!-- The view to create new blogs/articles -->
       <h1>Create your article</h1>
@@ -47,6 +44,12 @@
 
       </form>
 
+
+    @elseif ( $num_articles == 5 AND $payed == '0')
+
+     @include ('paywall.bank')
+
+    </div>
       @endif
 
     @endsection
