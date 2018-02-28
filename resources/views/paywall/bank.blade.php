@@ -2,8 +2,9 @@
 <div id="blogOverview">
   <h2>Hello {{ Auth::user()->name }}!</h2>
 
-    <p>You have uploaded five articels on your blog. Build a fandom by regulary publishing your
-      pieces. We ask a one time fee of 9,99 euro to support the platform.<br />
+    <p>You have uploaded five articles on your blog. Build a fandom by regulary publishing your
+      articles. <br />
+      We ask a one time fee of 9,99 euro to support the platform.<br />
       Would you like to continue to publish your articles for you reader?<br />
       Please fill out this form to give us a one-time incasso of 9,99 euro for your blog.
   </p>

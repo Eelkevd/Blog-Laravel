@@ -16,13 +16,13 @@ class CreatePaywallsTable extends Migration
         Schema::create('paywalls', function (Blueprint $table) {
             $table->increments('id');
             $table->string('IBAN');
-            $table->string('BIC');
-            $table->integer('mandaatid');
+            $table->string('BIC')->nullable();
+            $table->string('mandaatid');
             $table->dateTime('mandaatdatum');
-            $table->integer('bedrag');
+            $table->decimal('bedrag', 5, 2);;
             $table->string('naam');
             $table->string('beschrijving');
-            $table->string('endtoendid');
+            $table->string('endtoendid')->nullable();
             $table->timestamps();
         });
 

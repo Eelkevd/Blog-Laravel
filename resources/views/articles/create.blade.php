@@ -6,8 +6,6 @@
     if = 5 show alert PAY -->
     @if(  $num_articles == 5 )
 
-      <p>Please put money on your account to upload more than five articles</p>
-
       @include ('paywall.bank')
 
     </div>
