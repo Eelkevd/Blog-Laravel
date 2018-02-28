@@ -27,7 +27,6 @@ class AdminController extends Controller {
     	DB::statement("SELECT * FROM article_category INTO OUTFILE 'C:/xampp/htdocs/blog2/storage/article_category.sql'");
     	DB::statement("SELECT * FROM password_resets INTO OUTFILE 'C:/xampp/htdocs/blog2/storage/password_resets.sql'");
 
-    	//return redirect()->back()->with('alert', 'Deleted!');
     	return redirect('owner/owner')->with('alert', 'Backup made in Storage map!');
     }
 
