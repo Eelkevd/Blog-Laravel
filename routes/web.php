@@ -47,3 +47,7 @@ Route::post('/articles/{article}/comments', 'CommentsController@store');
 
 // Page to artilcle selected from category
 Route::get('/articles/categories/{category}','CategoriesController@home');
+
+// Page to admin page
+Route::get('/owner/owner','AdminController@home');
+Route::get('/owner/owner/backup','AdminController@backup');
