@@ -9,7 +9,7 @@
   </p>
   <p>Thank you for being supportive!</p>
 
-    <form method="post" action="paywall">
+    <form method="POST" action="../paywall">
       {{ csrf_field() }}
 
       <div id="blogPage">

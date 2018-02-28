@@ -18,7 +18,7 @@ class CreatePaywallsTable extends Migration
             $table->string('IBAN');
             $table->string('BIC');
             $table->integer('mandaatid');
-            $table->string('mandaatdatum');
+            $table->dateTime('mandaatdatum');
             $table->integer('bedrag');
             $table->string('naam');
             $table->string('beschrijving');

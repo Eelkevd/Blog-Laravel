@@ -1,11 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-namespace App;
+
 
 use Illuminate\Http\Request;
-use App\Article;
-use App\Blog;
+use Illuminate\Support\Facades\DB;
+use \App\Article;
+use \App\User;
+use \App\Paywall;
 
 class PaywallController extends Controller
 {
@@ -24,17 +26,11 @@ class PaywallController extends Controller
   				'IBAN' => 'required'
   			]);
 
-        // Get all existing numbers in database
-        $m_ids = Paywall::pluck('mandaatid');
-
-        // Generate a new unique number
-        do {
-            $$mandaatid = rand(1000, 9999);
-        } while (in_array($$mandaatid, $m_ids));
+        $mandaatid = \DB::table('paywalls')->pluck('id');
 
   			$paywall = new Paywall;
   			$paywall->IBAN = $request->IBAN;
-        $paywall->BIC = $request->BIC;
+        $paywall->BIC = '';
         $paywall->mandaatid = $mandaatid;
         $paywall->mandaatdatum = NOW();
         $paywall->bedrag = "9,99";
