@@ -5,10 +5,10 @@
     <!-- Count the number of articles with this blogs
     if = 5 show alert PAY -->
     @if(  $num_articles == 5 )
-
+    <div id="blogPage">
       <p>Please put money on your account to upload more than five articles</p>
 
-
+    </div>
     @else
 
       <!-- The view to create new blogs/articles -->

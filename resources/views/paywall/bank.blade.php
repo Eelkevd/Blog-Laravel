@@ -1,15 +1,10 @@
-@extends ('layouts.layout')
+<div  id="blogOverview">
 
-    @section ('content')
-
-    <form method="POST" action="/articles">
-    {{ csrf_field() }}
-
-      <div id="blogPage">
-        
+        <form method="POST" action="paywall/create">
+              {{ csrf_field() }}
 
       </div>
     </form>
 
 
-    @endsection
+</div>
