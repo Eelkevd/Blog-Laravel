@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use \App\Article;
 use \App\User;
 use \App\Blog;
-
 
 class BlogController extends Controller
 {
@@ -29,8 +29,7 @@ class BlogController extends Controller
 			return view('blogs.show', compact('blog', 'articles'));
 		}
 
-
-		public function create()
+	public function create()
 		{
 
 			return view('blogs.create');

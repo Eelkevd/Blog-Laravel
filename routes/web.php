@@ -50,3 +50,7 @@ Route::get('/articles/categories/{category}','CategoriesController@home');
 
 // Page for the PaywallController
 Route::post('/paywall', 'PaywallController@store');
+
+// Page to admin page
+Route::get('/owner/owner','AdminController@home');
+Route::get('/owner/owner/backup','AdminController@backup');
