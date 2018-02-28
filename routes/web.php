@@ -47,3 +47,6 @@ Route::post('/articles/{article}/comments', 'CommentsController@store');
 
 // Page to artilcle selected from category
 Route::get('/articles/categories/{category}','CategoriesController@home');
+
+// Page for the PaywallController
+Route::post('/paywall', 'PaywallController@store');

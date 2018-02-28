@@ -5,19 +5,19 @@
     <!-- Count the number of articles with this blogs
     if = 5 show alert PAY -->
     @if(  $num_articles == 5 )
-    <div id="blogPage">
+
       <p>Please put money on your account to upload more than five articles</p>
+
+      @include ('paywall.bank')
 
     </div>
     @else
 
       <!-- The view to create new blogs/articles -->
       <h1>Create your article</h1>
-
-      <form method="POST" action="/articles">
-      {{ csrf_field() }}
-
-        <div id="blogPage">
+      <div id="blogOverview">
+        <form method="POST" action="/articles">
+          {{ csrf_field() }}
 
             <!-- log id from the user that is logged in-->
             <input type="hidden" name="blog_id" id="blog_id" value="{{ $blog_id }}">
