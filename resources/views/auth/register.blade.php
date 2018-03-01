@@ -1,5 +1,6 @@
 @extends('layouts.layout')
 
+<!-- The view for the register screen -->
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -11,6 +12,7 @@
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
+                        <!-- Name input field -->
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
 
@@ -25,6 +27,7 @@
                             </div>
                         </div>
 
+                        <!-- Blog name input field -->
                         <div class="form-group row">
                             <label for="title" class="col-md-4 col-form-label text-md-right">Blog name</label>
 
@@ -40,16 +43,16 @@
                             </div>
                         </div>
 
+                        <!-- Blog description input field -->
                         <div class="form-group row">
-                            <label for="blog_subject" class="col-md-4 col-form-label text-md-right">Discription</label>
+                            <label for="blog_subject" class="col-md-4 col-form-label text-md-right">Description</label>
 
                             <div class="col-md-6">
                                 <input id="blogSubject" type="text" class="form-control{{ $errors->has('blog_subject  ') ? ' is-invalid' : '' }}" name="blog_subject" value="{{ old('blog_subject') }}" required>
-
-
                             </div>
                         </div>
 
+                        <!-- Email input field -->
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
 
@@ -64,6 +67,7 @@
                             </div>
                         </div>
 
+                        <!-- Password input field -->
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
 
@@ -78,6 +82,7 @@
                             </div>
                         </div>
 
+                        <!-- Password confirm input field -->
                         <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">Confirm Password</label>
 
@@ -86,7 +91,7 @@
                             </div>
                         </div>
 
-
+                        <!-- Register button -->
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

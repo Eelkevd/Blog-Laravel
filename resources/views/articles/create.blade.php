@@ -2,43 +2,50 @@
 
     @section ('content')
 
-    <!-- The view to create new blogs/articles -->
-    <h1>Create a Post</h1>
+	    <!-- Count the number of articles of the blog
+	    if = 5 show alert PAY -->
+	    @if( $num_articles < 5 OR $payed == '1' )
 
-    <form method="POST" action="/articles">
-	{{ csrf_field() }}
+	    	<!-- The view to create new blogs/articles -->
+	      	<h1>Create your article</h1>
+	      	<div id="blogOverview">
+	        <form method="POST" action="/articles">
+	          	{{ csrf_field() }}
 
-  <!-- hidden hardcoded blog_id
-        Needs to be the blog id from the user that is logged in-->
-    <input type="hidden" name="blog_id" id="blog_id" value="1">
-    <input type="hidden" name="user_id" id="user_id" value="1">
-    
-    <div id="blogPage">
+	            <!-- log id from the user that is logged in -->
+	            <input type="hidden" name="blog_id" id="blog_id" value="{{ $blog_id }}">
+	            <input type="hidden" name="user_id" id="user_id" value="{{ $userid }}">
+	            <input type="text" name="title" placeholder="title" id="blogTitle"> <br />
 
-		<input type="text" name="title" placeholder="title" id="blogTitle"> <br />
+	            <!-- Checkboxes for categories -->
+	            <div id="categoryBoxes">
 
-		<!-- Checkboxes for categories WORK IN PROGRESS -->
-		<div id="categoryBoxes">
+	              @foreach($categories as $category)
 
-			@foreach($categories as $category)
+	                <input type="checkbox" id="FireCheckB" name="subscribe[]" value="{{ $category->id }}">
+	                <label for="subscribeNews">{{ $category->name }}</label>
 
-				<input type="checkbox" id="FireCheckB" name="subscribe[]" value="{{ $category->id }}">
-				<label for="subscribeNews">{{ $category->name }}</label>
+	              @endforeach()
 
-			@endforeach()
+	            </div>
 
-		</div>
+	            <textarea name="bodytext" id="blogText" placeholder="Type your article"></textarea>
 
-		<textarea name="bodytext" id="blogText" placeholder="Type your article"></textarea>
+	            <br />
 
-		<br />
+	            <input type="submit" id="btnSubBlog" align="center" value="submit">
 
-		<input type="submit" id="btnSubBlog" align="center" value="submit">
+	       	</div>
 
-	</div>
+	        @include('layouts.error')
 
-	@include('layouts.error')
+	      	</form>
 
-	</form>
+
+	    @elseif ( $num_articles == 5 AND $payed == '0')
+
+	     	@include ('paywall.bank')
+	     	
+	    @endif
 
     @endsection

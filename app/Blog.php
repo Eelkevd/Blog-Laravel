@@ -2,27 +2,18 @@
 
 namespace App;
 
-
+// Model page for the blogs
 class Blog extends Model
 {
-
-    public function user()  // Use this to get the username of
-    // the author of the post where this comment belongs to:
-    // $comment->post-user
+    // Couple user with blog
+    public function user()
     {
       return $this->belongsTo(User::class);
     }
 
-    public function articles()  // Use this to get the username of
-    // the author of the blog where this article belongs to:
-    // $article->post-user
+    // Couple articles with blog
+    public function articles() 
     {
       return $this->hasMany(Article::class);
     }
-
-    public function blog()//
-    {
-        return $this->belongsTo(Blog::class);
-    }
-
 }

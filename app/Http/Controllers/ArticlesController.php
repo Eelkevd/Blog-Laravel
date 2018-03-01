@@ -1,7 +1,9 @@
 <?php
 
-// Controller of the articles
+// Controller of the articles section
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use App\Blog;
 use App\Category;
 use App\Article;
@@ -9,10 +11,16 @@ use Illuminate\Http\Request;
 
 class ArticlesController extends Controller
 {
+    // Function to check login
+    public function __construct()
+    {
+        $this->middleware('auth', ['only' => 'create']);
+    }
+
     // Function to get all blogs with latest on top
     public function blogs()
     {
-		  $articles = Article::latest()->get();
+		$articles = Article::latest()->get();
     	return view('articles.blogs', compact('articles'));
     }
 
@@ -28,21 +36,26 @@ class ArticlesController extends Controller
         return view('articles.home');
     }
 
-     // Function to go back to homepage
+    // Function to go to categories page
     public function categories()
     {
         $categories = Category::get();
         return view('articles.categories', compact('categories'));
     }
 
-    // Function to create new blog
+    // Function to create new article
     public function create()
     {
+        $userid = Auth::id();
+        $blog = Blog::where('user_id', $userid)->first();
+        $blog_id = $blog['id'];
+        $num_articles = Article::where('user_id', $userid)->count();
         $categories = Category::all();
-	    return view('articles.create', compact('categories'));
+        $payed =DB::table('users')->where('id', $userid)->pluck('payed')->first();
+        return view('articles.create', compact('userid', 'blog_id', 'num_articles', 'categories', 'payed'));
     }
 
-    // Function to validate & store new blog in database and redirects to homepage
+    // Function to validate & store new article in database and redirect to homepage
     public function store(Request $request)
     {
     	// create a new article/blog
@@ -51,11 +64,8 @@ class ArticlesController extends Controller
             'bodytext'  => 'required'
         ]);
 
-        //dd($request);
-
         $article = Article::create(request(['blog_id', 'user_id', 'title', 'bodytext']));
         $article->categories()->attach($request->subscribe);
-
     	return redirect('articles/home');
     }
 }

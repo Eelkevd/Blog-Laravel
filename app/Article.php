@@ -2,7 +2,7 @@
 
 namespace App;
 
-// Model page for the articles/blogs
+// Model page for the articles
 class Article extends Model
 {
 	// Couple categories with articles
@@ -23,6 +23,7 @@ class Article extends Model
 		$this->comments()->create(compact('body'));
 	}
 
+	// Couple blog with articles
 	public function blogs()
 	{
 		return $this->belongsTo(Blog::class);

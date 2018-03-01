@@ -1,5 +1,6 @@
 @extends('layouts.layout')
 
+<!-- The view for the login screen -->
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -11,6 +12,7 @@
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
+                        <!-- Email input field -->
                         <div class="form-group row">
                             <label for="email" class="col-sm-4 col-form-label text-md-right">E-Mail Address</label>
 
@@ -25,6 +27,7 @@
                             </div>
                         </div>
 
+                        <!-- Password input field -->
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
 
@@ -39,6 +42,7 @@
                             </div>
                         </div>
 
+                        <!-- Remember checkbox -->
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-4">
                                 <div class="checkbox">
@@ -49,6 +53,7 @@
                             </div>
                         </div>
 
+                        <!-- Login button & Forgot password link -->
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

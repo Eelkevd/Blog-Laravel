@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -71,7 +71,7 @@ class RegisterController extends Controller
         ]);
 
         $blog = Blog::create([
-            'title' => $data['blog_name'],
+            'title' => $data['title'],
             'user_id' => $user['id'],
             'subject' => $data['blog_subject'],
         ]);

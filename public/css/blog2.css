@@ -1,11 +1,15 @@
 
 body {
-	background-color: #F4F4E2; 
+	background-color: #F4F4E2;
 	padding: 35px;
     margin: 30px;
-  	font-family: Trebuchet MS; 
-	text-align: center; 
+  	font-family: Trebuchet MS;
+	text-align: center;
 	}
+
+ul {
+	list-style-type: none;
+}
 
 /* Style the blog bodytext //// DOESNT WORK ////  */
 #blogText {
@@ -28,12 +32,31 @@ body {
 #blogPage{
     position: relative;
     background-color: gray;
-   	text-align: center; 
+   	text-align: center;
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 20px;
 }
 
 /* Style the page where  blogs are displayed */
 #blogOverview {
 	background-color: white;
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.border{
+	border: 1px dotted black;
+	width: 500px;
+	margin: 15px auto;
+	padding: 5px;
+}
+
+.note{
+	font-size: 0.8em;
+	font-style: italic;
+	padding: 0px;
 }
 
 /* Style the title of blogs */
@@ -53,19 +76,19 @@ body {
 }
 
 /* Style the blog submit button */
-#btnSubBlog {
+#btnSubBlog, .btn {
 	background-color: white;
 	padding: 5px;
-	width: 80px;
+	width: 120px;
 	cursor: pointer;
 	font-family: Trebuchet MS;
 	font-size: 80%;
 	margin-bottom: 20px;
-	border-style: none;
+	border-style: 1px, solid, black;
 }
 
 /* Style the blog submit button on mousehover */
-#btnSubBlog:hover {
+#btnSubBlog:hover, .btn:hover {
 	background-color: black;
 	color: white;
 }
@@ -79,7 +102,7 @@ body {
 /* Style the top navigation bar */
 .topnav {
     overflow: hidden;
-	text-align: center; 
+	text-align: center;
 	display: inline-block;
 
 }
@@ -95,7 +118,7 @@ body {
     text-align: center;
     padding: 4px 6px;
     text-decoration: none;
-}	
+}
 
 /* Style the topnav links */
 .topnav a {
@@ -113,4 +136,3 @@ body {
     background-color: rgb(224, 224, 224);
     color: black;}
 }
-
