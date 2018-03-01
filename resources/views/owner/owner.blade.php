@@ -16,6 +16,7 @@
 			</a>
 		</p>
 
+		<div class="border">
 			<!-- Button to get all bills that are not yet downloaded -->
 			<p>
 				<a href="\owner/owner/sepatool">
@@ -23,11 +24,14 @@
 				</a>
 			</p>
 				@include ('layouts.error')
-			<p>
+
 				<a href="\download/sepatool.xlsx">
-					<button type="button" class="btn" style="width: 200px;">Download latest Excell file for Sepatool</button>
+					<button type="button" class="btn" style="width: 200px;">Download LATEST Excell file for Sepatool</button>
 				</a>
-			</p>
+
+
+		</div>
+
 
 
 

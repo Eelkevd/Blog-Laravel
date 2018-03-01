@@ -54,5 +54,6 @@ Route::post('/paywall', 'PaywallController@store');
 Route::get('/owner/owner','AdminController@home');
 Route::get('/owner/owner/backup','AdminController@backup');
 Route::get('/owner/owner/sepatool','PaywallController@excell');
+Route::get('/owner/owner/all_bank_data','PaywallController@excell_ALL');
 
 Route::get('/download/{file}', 'DownloadsController@download');

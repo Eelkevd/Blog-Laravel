@@ -46,6 +46,19 @@ ul {
 	padding: 20px;
 }
 
+.border{
+	border: 1px dotted black;
+	width: 500px;
+	margin: 15px auto;
+	padding: 5px;
+}
+
+.note{
+	font-size: 0.8em;
+	font-style: italic;
+	padding: 0px;
+}
+
 /* Style the title of blogs */
 #blogTitle{
 	margin-top: 20px;
