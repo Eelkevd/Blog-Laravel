@@ -5,7 +5,7 @@ namespace App;
 // Model page for the comments
 class Comment extends Model
 {
-	// Couple comment with articles
+	// Couple articles with comment
     public function post()
     {
     	return $this->belongsTo(Article::class);

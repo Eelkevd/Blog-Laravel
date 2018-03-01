@@ -5,15 +5,16 @@
 	@endsection
 
 	@section ('content')
-    <!-- The view of the welcome page, not much to do here --> 
- 	<h1> Choose category </h1>
 
-			@foreach ($categories as $category)
+	    <!-- The view of the category page, view all categories -->
+	 	<h1> Choose category </h1>
 
-            	<!-- Links to article.blade.php view -->
-            	@include('articles.category')
+				@foreach ($categories as $category)
 
-            @endforeach
+	            	<!-- Links to article.blade.php view -->
+	            	@include('articles.category')
+
+	            @endforeach
 
 	@endsection
 

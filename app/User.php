@@ -1,14 +1,13 @@
 <?php
 
 namespace App;
-
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+// Model page for the users
 class User extends Authenticatable
 {
     use Notifiable;
-
     /**
      * The attributes that are mass assignable.
      *
@@ -17,7 +16,6 @@ class User extends Authenticatable
     protected $fillable = [
         'name', 'email', 'password',
     ];
-
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -27,10 +25,13 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function blogs() {
+    // Couple blogs with user
+    public function blogs() 
+    {
       return $this->hasMany(Blog::class);
     }
-
+    
+    // Couple paywall with user
     public function paywalls()
     {
       return $this->belongsTo(Paywall::class);

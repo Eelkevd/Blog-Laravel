@@ -2,54 +2,50 @@
 
     @section ('content')
 
-    <!-- Count the number of articles with this blogs
-    if = 5 show alert PAY -->
+	    <!-- Count the number of articles of the blog
+	    if = 5 show alert PAY -->
+	    @if( $num_articles < 5 OR $payed == '1' )
 
-    @if( $num_articles < 5 OR $payed == '1' )
+	    	<!-- The view to create new blogs/articles -->
+	      	<h1>Create your article</h1>
+	      	<div id="blogOverview">
+	        <form method="POST" action="/articles">
+	          	{{ csrf_field() }}
 
+	            <!-- log id from the user that is logged in -->
+	            <input type="hidden" name="blog_id" id="blog_id" value="{{ $blog_id }}">
+	            <input type="hidden" name="user_id" id="user_id" value="{{ $userid }}">
+	            <input type="text" name="title" placeholder="title" id="blogTitle"> <br />
 
-      <!-- The view to create new blogs/articles -->
-      <h1>Create your article</h1>
-      <div id="blogOverview">
-        <form method="POST" action="/articles">
-          {{ csrf_field() }}
+	            <!-- Checkboxes for categories -->
+	            <div id="categoryBoxes">
 
-            <!-- log id from the user that is logged in-->
-            <input type="hidden" name="blog_id" id="blog_id" value="{{ $blog_id }}">
-            <input type="hidden" name="user_id" id="user_id" value="{{ $userid }}">
+	              @foreach($categories as $category)
 
-            <input type="text" name="title" placeholder="title" id="blogTitle"> <br />
+	                <input type="checkbox" id="FireCheckB" name="subscribe[]" value="{{ $category->id }}">
+	                <label for="subscribeNews">{{ $category->name }}</label>
 
-            <!-- Checkboxes for categories WORK IN PROGRESS -->
-            <div id="categoryBoxes">
+	              @endforeach()
 
-              @foreach($categories as $category)
+	            </div>
 
-                <input type="checkbox" id="FireCheckB" name="subscribe[]" value="{{ $category->id }}">
-                <label for="subscribeNews">{{ $category->name }}</label>
+	            <textarea name="bodytext" id="blogText" placeholder="Type your article"></textarea>
 
-              @endforeach()
+	            <br />
 
-            </div>
+	            <input type="submit" id="btnSubBlog" align="center" value="submit">
 
-            <textarea name="bodytext" id="blogText" placeholder="Type your article"></textarea>
+	       	</div>
 
-            <br />
+	        @include('layouts.error')
 
-            <input type="submit" id="btnSubBlog" align="center" value="submit">
-
-        </div>
-
-        @include('layouts.error')
-
-      </form>
+	      	</form>
 
 
-    @elseif ( $num_articles == 5 AND $payed == '0')
+	    @elseif ( $num_articles == 5 AND $payed == '0')
 
-     @include ('paywall.bank')
-
-    </div>
-      @endif
+	     	@include ('paywall.bank')
+	     	
+	    @endif
 
     @endsection
