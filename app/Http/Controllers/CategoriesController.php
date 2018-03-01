@@ -11,7 +11,7 @@ class CategoriesController extends Controller
     // Function to check login
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth', ['only' => 'create']);
     }
 
     // Function to show all articles of category
