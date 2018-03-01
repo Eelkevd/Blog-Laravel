@@ -6,3 +6,4 @@
 6	2018_02_26_141947_create_blogs_table	1
 7	2018_02_28_095018_create_paywalls_table	2
 8	2018_02_28_143453_add_payed_to_users	2
+9	2018_03_01_083130_add_dowloaded_to_paywalls	3
