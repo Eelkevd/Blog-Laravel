@@ -12,8 +12,8 @@ On the homepage there is not much to see, but you can go to the "Blogs" page, th
 
 ### Workflow
 - monday: read new userstories, made new shared Trello, updated old Github repository and readme, Userstory W6-006, W6-002 work in progress;
-- tuesday:
-- wednesday: 
+- tuesday: watched laracast episode 17, Userstory W6-002, W6-009, W6-011 & W7-002 finished, Userstory W7-001 work in progress, made first release version master branch on Github;
+- wednesday: brainstorm project week 9, Soft skill lesson, watched videos & feedback job interview, Userstory W6-7-003 finished, Userstory W7-001, W7-004 & W7-009 work in progress; 
 - thursday: 
 - friday:
 
@@ -50,7 +50,12 @@ The Userstories of the CodeGorilla assignment for week 6 (in Dutch):
 - W7-009 Eigenaar    wil ik vanuit de backend een backup van alle weblogs kunnen maken in de vorm van een database dump.
 
 ## Finished userstories
+- W6-002
 - W6-006
+- W6-009
+- W6-011
+- W7-002
+- W7-003
 
 # Screenshots
 
