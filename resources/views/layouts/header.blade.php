@@ -1,12 +1,12 @@
 <div class="topnav">
-
-	<a href=\>Home</a>
-    <a href= \articles/blogs>Articles</a>
-    <a href="/articles/categories">Categories</a>
-    <a href="/articles/createcategory">Create category</a>
-    <a href= \articles/create >Create article</a>
-    <a href= \owner/owner >Admin</a>
-
+<ul>
+	<li class="button"><a href=\>Home</a></li>
+  <li class="button"><a href= \articles/blogs>Articles</a></li>
+  <li class="button"><a href="/articles/categories">Categories</a></li>
+  <li class="button"><a href="/articles/createcategory" style="width:160px;">Create category</a></li>
+  <li class="button"><a href= "/articles/create" style="width:160px;">Create article</a></li>
+  <li class="button"><a href= \owner/owner >Admin</a></li>
+</ul>
     <div style="clear:both"></div>
 
 </div>

@@ -20,21 +20,24 @@ class ArticlesController extends Controller
     // Function to get all blogs with latest on top
     public function blogs()
     {
-		$articles = Article::latest()->get();
-    	return view('articles.blogs', compact('articles'));
+		    $articles = Article::latest()->get();
+    	   return view('articles.blogs', compact('articles'));
     }
 
     // Function to show specific article
     public function show(Article $article)
     {
-	    return view('articles.show', compact('article'));
+	     return view('articles.show', compact('article'));
     }
 
     // Function to go back to homepage
     public function home()
     {
-        $articles = Article::latest()->get();
-        return view('articles.home', compact('articles'));
+        $articles = Article::latest()
+        ->filter(request(['month', 'year']))
+        ->get();
+
+        return view('articles.blogs', compact('articles'));
     }
 
     // Function to go to categories page

@@ -13,13 +13,12 @@
 
 // Routes/Router: An overview of all the webpages and their controller page
 
-// Authentication routes 
+// Authentication routes
 Auth::routes();
 
 //Homepage
 Route::get('/', 'BlogController@index')->name('home');
-Route::get('/articles', 'BlogController@index')->name('home');
-Route::get('/articles/home', 'BlogController@index')->name('home');
+Route::get('/articles', 'ArticlesController@home');
 
 // Page of specific blog
 Route::get('/blogs/{blog}', 'BlogController@show');
