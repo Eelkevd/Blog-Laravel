@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB; 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
 
 class AdminController extends Controller {
@@ -13,7 +14,14 @@ class AdminController extends Controller {
 
     function home()
     {
-    	return view('owner.owner');
+        $userid = Auth::id();
+        $user = DB::table('users')->where('id', $userid)->first();
+        if ($user->owner == 1){
+            return view('owner.owner');   
+        }
+    	else {
+            return view('articles.home');
+        }
     }
 
     function backup()
