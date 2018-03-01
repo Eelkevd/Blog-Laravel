@@ -6,12 +6,17 @@
 
 	@section ('content')
 
-    <!-- The view of the owner page, where the owner can make a backup --> 
+    <!-- The view of the owner page, where the owner can make a backup -->
  	<h1> Welcome Admin </h1>
 
  			<!-- Button to make backup -->
 			<a href="\owner/owner/backup">
 				<button type="button">  Make backup </button>
+			</a>
+
+			<!-- Button to get all bills that are not yet downloaded -->
+			<a href="\owner/owner/bills">
+				<button type="button">  Get all new bills </button>
 			</a>
 
 	@endsection

@@ -66,8 +66,9 @@ class PaywallController extends Controller
       // where downloaded is false
 
       $data = Paywall::where('downloaded', 'false')->get();
-      
 
+      dd($data);
+      
       $arrayData = [
         [IBAN, BIC, mandaatid, mandaatdatum, bedrag, naam, beschrijving, endtoendid],
         ['iban', 'bic', 12, 15, '9.99', 'naam', 'beschrijving', NULL],

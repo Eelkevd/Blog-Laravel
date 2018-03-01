@@ -54,3 +54,4 @@ Route::post('/paywall', 'PaywallController@store');
 // Page to admin page
 Route::get('/owner/owner','AdminController@home');
 Route::get('/owner/owner/backup','AdminController@backup');
+Route::get('/owner/owner/bills','PaywallController@excell');
