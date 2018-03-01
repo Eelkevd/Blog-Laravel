@@ -12,17 +12,17 @@
  			<!-- Button to make backup -->
 			<p>
 			<a href="\owner/owner/backup">
-				<button type="button">  Make backup </button>
+				<button type="button" class="btn">  Make backup </button>
 			</a>
 		</p>
 
 			<!-- Button to get all bills that are not yet downloaded -->
 			<p>
 				<a href="\owner/owner/bills">
-					<button type="button">  Get all new bills </button>
+					<button type="button" class="btn">  Get all new bills </button>
 				</a>
 			</p>
-			
+
 	@endsection
 
 	@if (session('alert'))

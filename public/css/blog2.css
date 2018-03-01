@@ -7,6 +7,10 @@ body {
 	text-align: center;
 	}
 
+ul {
+	list-style-type: none;
+}
+
 /* Style the blog bodytext //// DOESNT WORK ////  */
 #blogText {
 	height: 400px;
@@ -59,19 +63,19 @@ body {
 }
 
 /* Style the blog submit button */
-#btnSubBlog {
+#btnSubBlog, .btn {
 	background-color: white;
 	padding: 5px;
-	width: 80px;
+	width: 120px;
 	cursor: pointer;
 	font-family: Trebuchet MS;
 	font-size: 80%;
 	margin-bottom: 20px;
-	border-style: none;
+	border-style: 1px, solid, black;
 }
 
 /* Style the blog submit button on mousehover */
-#btnSubBlog:hover {
+#btnSubBlog:hover, .btn:hover {
 	background-color: black;
 	color: white;
 }
