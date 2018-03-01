@@ -33,7 +33,8 @@ class ArticlesController extends Controller
     // Function to go back to homepage
     public function home()
     {
-        return view('articles.home');
+        $articles = Article::latest()->get();
+        return view('articles.home', compact('articles'));
     }
 
     // Function to go to categories page

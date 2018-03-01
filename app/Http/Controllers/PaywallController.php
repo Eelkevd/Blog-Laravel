@@ -3,8 +3,9 @@
 // Controller of the paywall section
 namespace App\Http\Controllers;
 
-// composer require phpoffice/phpspreadsheet -> get program
-// https://phpspreadsheet.readthedocs.io/en/develop/ -> Documentation
+// composer require phpoffice/phpspreadsheet
+// https://phpspreadsheet.readthedocs.io/en/develop/ 
+
 // require 'vendor/autoload.php';
 
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
