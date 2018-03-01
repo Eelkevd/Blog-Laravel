@@ -2,7 +2,7 @@
 
 	<!-- The view to show the blog title as link and publishing the description  -->
  	<h2 class="article-title">
-		<a href="/blogs/{{ $blog->user_id }}">
+		<a href="/blogs/{{ $blog->id }}">
 			{{ $blog -> title }}
 		</a>
 	</h2>
