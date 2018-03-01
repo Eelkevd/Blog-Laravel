@@ -13,7 +13,6 @@
 
 // Routes/Router: An overview of all the webpages and their controller page
 Auth::routes();
-Route::get('/', 'HomeController@index');
 
 Route::get('/', 'BlogController@index')->name('home');
 Route::get('/articles', 'ArticlesController@home');
@@ -54,4 +53,6 @@ Route::post('/paywall', 'PaywallController@store');
 // Page to admin page
 Route::get('/owner/owner','AdminController@home');
 Route::get('/owner/owner/backup','AdminController@backup');
-Route::get('/owner/owner/bills','PaywallController@excell');
+Route::get('/owner/owner/sepatool','PaywallController@excell');
+
+Route::get('/download/{file}', 'DownloadsController@download');

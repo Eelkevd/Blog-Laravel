@@ -18,10 +18,17 @@
 
 			<!-- Button to get all bills that are not yet downloaded -->
 			<p>
-				<a href="\owner/owner/bills">
-					<button type="button" class="btn">  Get all new bills </button>
+				<a href="\owner/owner/sepatool">
+					<button type="button" class="btn" style="width: 200px;">Create a new Excell file for Septatool</button>
 				</a>
 			</p>
+			<p>
+				<a href="\download/sepatool.xlsx">
+					<button type="button" class="btn" style="width: 200px;">Download latest Excell file for Sepatool</button>
+				</a>
+			</p>
+
+			@include ('layouts.error')
 
 	@endsection
 

@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+// composer require phpoffice/phpspreadsheet -> get program
+// https://phpspreadsheet.readthedocs.io/en/develop/ -> Documentation
+// require 'vendor/autoload.php';
 
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -67,10 +72,8 @@ class PaywallController extends Controller
 
       $data = Paywall::where('downloaded', 'false')->get();
 
-      dd($data);
-
       $arrayData = [
-        [IBAN, BIC, mandaatid, mandaatdatum, bedrag, naam, beschrijving, endtoendid],
+        ['IBAN', 'BIC', 'mandaatid', 'mandaatdatum', 'bedrag', 'naam', 'beschrijving', 'endtoendid'],
         ['iban', 'bic', 12, 15, '9.99', 'naam', 'beschrijving', NULL],
       ];
 
@@ -80,9 +83,17 @@ class PaywallController extends Controller
         $arrayData, NULL, 'A1'
         );
       $writer = new Xlsx($spreadsheet);
-      $writer->save('../../Excell_bills/firstbill.xlsx');
+
+      if(! $writer->save('./sepatool.xlsx')){
+
+        return back()->withErrors([
+          'message' => 'Succesfully downloaded';
+        ]);
+
+      }
 
     }
+
 
 
 }

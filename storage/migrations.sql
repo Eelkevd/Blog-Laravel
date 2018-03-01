@@ -1,6 +1,0 @@
-1	2014_10_12_000000_create_users_table	1
-2	2014_10_12_100000_create_password_resets_table	1
-3	2018_02_19_155927_create_articles_table	1
-4	2018_02_22_082727_create_comments_table	1
-5	2018_02_22_135511_create_categories_table	1
-6	2018_02_26_141947_create_blogs_table	1
