@@ -1,35 +1,32 @@
 <?php
 
+// Controller of the paywall section
 namespace App\Http\Controllers;
-
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use \App\Article;
 use \App\User;
 use \App\Paywall;
-
 use Carbon\Carbon;
 
 class PaywallController extends Controller
 {
-
+    // Function to check login
     public function __construct()
-      {
-          $this->middleware('auth', ['only' => 'store']);
-      }
+    {
+        $this->middleware('auth', ['only' => 'store']);
+    }
 
+    // Function to count number of articles
     public function count()
     {
-
-     $num_articles = Category::withCount('articles')->get();
-     return view('articles.blogs', compact('articles'));
-
+        $num_articles = Category::withCount('articles')->get();
+        return view('articles.blogs', compact('articles'));
     }
 
     public function store(Request $request)
-  		{
+  	{
   			$this->validate(request(), [
   				'naam' => 'required',
   				'IBAN' => 'required'
@@ -50,14 +47,11 @@ class PaywallController extends Controller
         if ($is_saved) {
             // success set boolean to true in user table
             $userid = Auth::id();
-            User::where('id', $userid)->update(array(
-                         'payed'=>true));
-
-        } else {
+            User::where('id', $userid)->update(array('payed'=>true));
+        } 
+        else {
             App::abort(500, 'Not saved: Error');
         }
-
   			return redirect("articles/create");
   	}
-
 }

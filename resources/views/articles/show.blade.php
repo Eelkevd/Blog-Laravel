@@ -1,59 +1,60 @@
-
 @extends ('layouts.layout')
 
     @section ('content')
 
-    <div>
-    	 <!-- The view to show individual blogs, their categories and their comment section -->
-        <h1>{{ $article -> title }}</h1>
+        <div>
+        	<!-- The view to show individual blogs, their categories and their comment section -->
+            <h1>{{ $article -> title }}</h1>
 
-        {{ $article -> bodytext }}
+            {{ $article -> bodytext }}
 
-    	<hr>
-    		<!--Show all comments-->
-    		<div class="comments">
+        	<hr>
+        		
+            <!--Show all comments-->
+        	<div class="comments">
 
-    		@foreach ($article->comments as $comment)
+        		@foreach ($article->comments as $comment)
 
-    			<li class="list-group-item">
+        			<li class="list-group-item">
 
-    				{{ $comment->body}}
+        				{{ $comment->body}}
 
-    			</li>
+        			</li>
 
-    		@endforeach
+        		@endforeach
 
-    		</div>
+        	</div>
 
-    	<hr>
-			<!--Add a comment-->
-    		<div class="card">
+        	<hr>
 
-    			<div class="card-block">
+    		<!--Add a comment-->
+        	<div class="card">
 
-    				<form method="POST" action="/articles/{{ $article->id }}/comments">
+        		<div class="card-block">
 
-    					{{ csrf_field() }}
+        			<form method="POST" action="/articles/{{ $article->id }}/comments">
 
-    					<div class="form-group">
+        				{{ csrf_field() }}
 
-    						<textarea name="body" placeholder="Write your comment!" class="form=control" required></textarea>
-    					</div>
+        				<div class="form-group">
+
+        					<textarea name="body" placeholder="Write your comment!" class="form=control" required></textarea>
+        				</div>
 
 
-    					<div class="form-group">
+        				<div class="form-group">
 
-    						<button type="submit" id="btnSubComment" align="center" class="btn btn-primary"> Submit </button>
-    					
+        				    <button type="submit" id="btnSubComment" align="center" class="btn btn-primary"> Submit </button>
+        					
                         </div>
 
-    				</form>
+        			</form>
 
-    				@include ('layouts.error')
+        			@include ('layouts.error')
 
-    			</div>
+        		</div>
 
-    	   </div>	
+        	</div>	
 
         </div>
 

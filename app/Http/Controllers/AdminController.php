@@ -1,19 +1,22 @@
 <?php
-namespace App\Http\Controllers;
 
+// Controller of the admin section
+namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB; 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Storage;
 
-class AdminController extends Controller {
-
+class AdminController extends Controller
+{
+    // Function to check login
 	public function __construct()
     {
         $this->middleware('auth');
     }
 
-    function home()
+    // Function to test if user is owner
+    public function home()
     {
         $userid = Auth::id();
         $user = DB::table('users')->where('id', $userid)->first();
@@ -21,15 +24,16 @@ class AdminController extends Controller {
             return view('owner.owner');   
         }
     	else {
-            return view('articles.home');
+            return redirect('articles/home');
         }
     }
 
-    function backup()
+    // Function to make for each table if the database a backup file
+    public function backup()
     {
         $filename = (base_path('storage/articles.sql'));
         if (file_exists($filename)){
-        return redirect('owner/owner')->with('alert', 'First remove the old backup from the storage map!');    
+            return redirect('owner/owner')->with('alert', 'First remove the old backup from the storage map!');    
         }
         else{
             $article_file = (base_path('storage/articles.sql'));
@@ -48,8 +52,7 @@ class AdminController extends Controller {
         	DB::statement("SELECT * FROM article_category INTO OUTFILE '".addslashes($article_category_file)."'");
             $password_resets_file = (base_path('storage/password_resets.sql'));
         	DB::statement("SELECT * FROM password_resets INTO OUTFILE '".addslashes($password_resets_file)."'");
+            return redirect('owner/owner')->with('alert', 'Backup made in Storage map!');
         }
-    	return redirect('owner/owner')->with('alert', 'Backup made in Storage map!');
     }
-
 }

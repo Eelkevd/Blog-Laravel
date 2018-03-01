@@ -5,25 +5,26 @@
 	@endsection
 
 	@section ('content')
-    <!-- The view of the welcome page, not much to do here --> 
- 	<h1> Create category </h1>
 
-    <form method="POST" action="/articles/createcategory">
-    	
-	{{ csrf_field() }}
+	    <!-- The view of the welcome page, not much to do here --> 
+	 	<h1> Create category </h1>
 
-	    <div id="blogPage">
+	    <form method="POST" action="/articles/createcategory">
+	    	
+			{{ csrf_field() }}
 
-			<input type="text" name="name" placeholder="category name" id="blogTitle"> <br />
+		    <div id="blogPage">
 
-			<br />
+				<input type="text" name="name" placeholder="category name" id="blogTitle"> <br />
 
-			<input type="submit" id="btnSubBlog" align="center" value="submit">
+				<br />
 
-		</div>
+				<input type="submit" id="btnSubBlog" align="center" value="submit">
 
-	@include('layouts.error')
+			</div>
 
-	</form>
+		@include('layouts.error')
+
+		</form>
 
     @endsection

@@ -1,6 +1,6 @@
 <?php
 
-// Controller of the articles
+// Controller of the articles section
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -11,8 +11,8 @@ use Illuminate\Http\Request;
 
 class ArticlesController extends Controller
 {
-
-public function __construct()
+    // Function to check login
+    public function __construct()
     {
         $this->middleware('auth', ['only' => 'create']);
     }
@@ -20,7 +20,7 @@ public function __construct()
     // Function to get all blogs with latest on top
     public function blogs()
     {
-		  $articles = Article::latest()->get();
+		$articles = Article::latest()->get();
     	return view('articles.blogs', compact('articles'));
     }
 
@@ -36,7 +36,7 @@ public function __construct()
         return view('articles.home');
     }
 
-     // Function to go back to homepage
+    // Function to go to categories page
     public function categories()
     {
         $categories = Category::get();
@@ -46,22 +46,16 @@ public function __construct()
     // Function to create new article
     public function create()
     {
-      $userid = Auth::id();
-
-      //  $blog=Auth::user()->blogs()->get());
-      $blog = Blog::where('user_id', $userid)->first();
-      $blog_id = $blog['id'];
-
-      $num_articles = Article::where('user_id', $userid)->count();
-
-      $categories = Category::all();
-
-      $payed =DB::table('users')->where('id', $userid)->pluck('payed')->first();
-
-      return view('articles.create', compact('userid', 'blog_id', 'num_articles', 'categories', 'payed'));
+        $userid = Auth::id();
+        $blog = Blog::where('user_id', $userid)->first();
+        $blog_id = $blog['id'];
+        $num_articles = Article::where('user_id', $userid)->count();
+        $categories = Category::all();
+        $payed =DB::table('users')->where('id', $userid)->pluck('payed')->first();
+        return view('articles.create', compact('userid', 'blog_id', 'num_articles', 'categories', 'payed'));
     }
 
-    // Function to validate & store new blog in database and redirects to homepage
+    // Function to validate & store new article in database and redirect to homepage
     public function store(Request $request)
     {
     	// create a new article/blog
@@ -70,12 +64,8 @@ public function __construct()
             'bodytext'  => 'required'
         ]);
 
-        //dd($request);
-
         $article = Article::create(request(['blog_id', 'user_id', 'title', 'bodytext']));
         $article->categories()->attach($request->subscribe);
-
     	return redirect('articles/home');
     }
-
 }

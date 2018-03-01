@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
+// Seeder to create owner with access to admin section
 class OwnerSeeder extends Seeder
 {
     /**

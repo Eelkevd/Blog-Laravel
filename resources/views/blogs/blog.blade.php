@@ -1,14 +1,13 @@
 <div  id="blogOverview">
 
-	<!-- The view to show the blog titles as links and publishing the description  -->
-
+	<!-- The view to show the blog title as link and publishing the description  -->
  	<h2 class="article-title">
 		<a href="/blogs/{{ $blog->user_id }}">
 			{{ $blog -> title }}
 		</a>
 	</h2>
 
-	<h3>By blogger:
+	<h3> By blogger:
  			{{ $blog->user->name }}
 	</h3>
 
@@ -17,6 +16,6 @@
 		{{ $blog -> subject }}
 		<br />
 	</p>
-  <hr>
+  	<hr>
 
 </div
