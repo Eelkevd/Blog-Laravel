@@ -11,7 +11,7 @@ class DownloadsController extends Controller
 
       $file_path = $file_name;
 
-      return response()->download($file_path);
+      return response()->download($file_path)->deleteFileAfterSend(true);
     }
 
 }

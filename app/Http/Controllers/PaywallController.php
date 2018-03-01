@@ -67,27 +67,39 @@ class PaywallController extends Controller
 
     public function excell() {
 
-      // get the data from the Database
-      // where downloaded is false
+      $spreadsheet = new Spreadsheet();
+      $sheet = $spreadsheet->getActiveSheet();
 
+      //set header
+      $sheet->setCellValue('A1', 'IBAN');
+      $sheet->setCellValue('B1', 'BIC');
+      $sheet->setCellValue('C1', 'mandaatid');
+      $sheet->setCellValue('D1', 'mandaatdatum');
+      $sheet->setCellValue('E1', 'bedrag');
+      $sheet->setCellValue('F1', 'naam');
+      $sheet->setCellValue('G1', 'beschrijving');
+
+      // get the data from the Database where downloaded is false
+      // to ensure you don't download bankdata from people who already payed
       $data = Paywall::where('downloaded', 'false')->get();
 
-      $arrayData = [
-        ['IBAN', 'BIC', 'mandaatid', 'mandaatdatum', 'bedrag', 'naam', 'beschrijving', 'endtoendid'],
-        ['iban', 'bic', 12, 15, '9.99', 'naam', 'beschrijving', NULL],
-      ];
+      for ($i = 0; $i < count($data); $i++){
+          $excelRow = $i + 2;
+          $sheet->setCellValue('A' . $excelRow, $data[$i]->IBAN);
+          $sheet->setCellValue('B' . $excelRow, $data[$i]->BIC);
+          $sheet->setCellValue('C' . $excelRow, $data[$i]->mandaatid);
+          $sheet->setCellValue('D' . $excelRow, $data[$i]->mandaatdatum->todatestring());
+          $sheet->setCellValue('E' . $excelRow, $data[$i]->bedrag);
+          $sheet->setCellValue('F' . $excelRow, $data[$i]->naam);
+          $sheet->setCellValue('G' . $excelRow, 'Monthly payment for you blog');
+        }
 
-      $spreadsheet = new Spreadsheet();
-      $sheet = $spreadsheet->getActiveSheet()
-      ->fromArray(
-        $arrayData, NULL, 'A1'
-        );
       $writer = new Xlsx($spreadsheet);
 
       if(! $writer->save('./sepatool.xlsx')){
 
         return back()->withErrors([
-          'message' => 'Succesfully downloaded';
+          'message' => 'A new Excell file was created. Please download the latest excell file for Sepatool.'
         ]);
 
       }
