@@ -21,25 +21,18 @@ class Paywall extends Model
     }
 
     public function excell {
-      $spreadsheet = new Spreadsheet();
-      $sheet = $spreadsheet->getActiveSheet();
-      $sheet->setCellValue('A1', 'IBAN');
-      $sheet->setCellValue('B1', 'BIC');
-      $sheet->setCellValue('C1', 'mandaatid');
-      $sheet->setCellValue('D1', 'mandaatdatum');
-      $sheet->setCellValue('E1', 'bedrag');
-      $sheet->setCellValue('F1', 'naam');
-      $sheet->setCellValue('G1', 'beschrijving');
-      $sheet->setCellValue('H1', 'endtoendid');
-      $sheet->setCellValue('A2', 'IBAN');
-      $sheet->setCellValue('B2', 'BIC');
-      $sheet->setCellValue('C2', 'mandaatid');
-      $sheet->setCellValue('D2', 'mandaatdatum');
-      $sheet->setCellValue('E2', 'bedrag');
-      $sheet->setCellValue('F2', 'naam');
-      $sheet->setCellValue('G2', 'beschrijving');
-      $sheet->setCellValue('H2', 'endtoendid');
 
+      $arrayData = [
+      [IBAN, BIC, mandaatid, mandaatdatum, bedrag, naam, beschrijving, endtoendid],
+      ['iban', 'bic', 12, 15, '9.99', 'naam', 'beschrijving', NULL],
+
+    ];
+
+      $spreadsheet = new Spreadsheet();
+      $sheet = $spreadsheet->getActiveSheet()
+      ->fromArray(
+        $arrayData, NULL, 'A1'
+        );
       $writer = new Xlsx($spreadsheet);
       $writer-<save('bills/firstbill.xlsx');
 
