@@ -60,4 +60,28 @@ class PaywallController extends Controller
   			return redirect("articles/create");
   	}
 
+    public function excell() {
+
+      // get the data from the Database
+      // where downloaded is false
+
+      $data = Paywall::where('downloaded', 'false')->get();
+      
+
+      $arrayData = [
+        [IBAN, BIC, mandaatid, mandaatdatum, bedrag, naam, beschrijving, endtoendid],
+        ['iban', 'bic', 12, 15, '9.99', 'naam', 'beschrijving', NULL],
+      ];
+
+      $spreadsheet = new Spreadsheet();
+      $sheet = $spreadsheet->getActiveSheet()
+      ->fromArray(
+        $arrayData, NULL, 'A1'
+        );
+      $writer = new Xlsx($spreadsheet);
+      $writer-<save('../../Excell_bills/firstbill.xlsx');
+
+    }
+
+
 }

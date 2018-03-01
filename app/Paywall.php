@@ -20,22 +20,5 @@ class Paywall extends Model
       return $this->belongsTo(User::class);
     }
 
-    public function excell {
-
-      $arrayData = [
-      [IBAN, BIC, mandaatid, mandaatdatum, bedrag, naam, beschrijving, endtoendid],
-      ['iban', 'bic', 12, 15, '9.99', 'naam', 'beschrijving', NULL],
-
-    ];
-
-      $spreadsheet = new Spreadsheet();
-      $sheet = $spreadsheet->getActiveSheet()
-      ->fromArray(
-        $arrayData, NULL, 'A1'
-        );
-      $writer = new Xlsx($spreadsheet);
-      $writer-<save('bills/firstbill.xlsx');
-
-    }
 
 }

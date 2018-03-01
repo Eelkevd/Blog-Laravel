@@ -40,7 +40,7 @@ public function __construct()
     public function categories()
     {
         $categories = Category::get();
-        return view('articles.categories', compact('num_articles', 'categories'));
+        return view('articles.categories', compact('categories'));
     }
 
     // Function to create new article
