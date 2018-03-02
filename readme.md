@@ -14,6 +14,10 @@ A blog apllication build with laravel based on the userstories as described in t
 - thursday: Userstory W7-004 finished, W7-009, W6-008 work in progress, Eelke sick at home :(
 - friday: W7-009 works only locally, removed W6-008 (not working on heroku), Esmeralda not present, fixed bugs & improved code;  
 
+## To test the owner functionalities log in with:
+email: email@example.com
+password: miauw
+
 ## Look for the latest online demo at: https://sheltered-reef-90572.herokuapp.com/
 
 ## Userstories
