@@ -3,19 +3,16 @@
 A blog application to share your writings and comments with the world!
 A pair programming collaboration of Eelke, Jorik & Esmeralda, both working mostly on Eelke's laptop and github account (although Jorik and Esmeralda are collaborators on that github account). 
 
-A blog apllication build with laravel based on the userstories as described in the CodeGorilla assignment of week 6 (discussed down below) and a working online demo with Heroku. 
+A blog apllication build with laravel based on the userstories as described in the CodeGorilla assignment of week 7 (discussed down below) and a working online demo with Heroku. 
 
 ## Follow the progression: https://trello.com/b/FlXnsQWy/blog-laravel-week-7 
 
-## Description of the application
-On the homepage there is not much to see, but you can go to the "Blogs" page, the "Categories" page, the "Create category" page or the "Create blog" page. The Blogs page is the overview page with all the blog titles and publishing dates. The reader can click on each title to go to the page of the specific blog to read the blog or/and leave a comment to the specific blog. The comments will be displayed below the blog text on the page of the blog. The Categories page is the place to find all blogs of a certain category. Select one of the categories and get an overview page like the Blog page with only the blogs of that category. At the Create category page you can create your own category, so you or others are able to create a blog and adjust it to your new unique created category! Last but not least, at the Create blog page you can write your own blog with a title & blog text, adjust it to one or more categories with the checkboxes and submit it to the database so everbody can read your blog!
-
-### Workflow
+### Workflow Week 7
 - monday: read new userstories, made new shared Trello, updated old Github repository and readme, Userstory W6-006, W6-002 work in progress;
 - tuesday: watched laracast episode 17, Userstory W6-002, W6-009, W6-011 & W7-002 finished, Userstory W7-001 work in progress, made first release version master branch on Github;
-- wednesday: brainstorm project week 9, Soft skill lesson, watched videos & feedback job interview, Userstory W6-7-003 finished, Userstory W7-001, W7-004 & W7-009 work in progress; 
-- thursday: 
-- friday:
+- wednesday: brainstorm project week 9, Soft skill lesson, watched videos & feedback job interview, Userstory W7-003 finished, Userstory W7-001, W7-004 & W7-009 work in progress; 
+- thursday: Userstory W7-004 finished, W7-009, W6-008 work in progress, Eelke sick at home :(
+- friday: W7-009 works only locally, removed W6-008 (not working on heroku), Esmeralda not present, fixed bugs & improved code;  
 
 ## Look for the latest online demo at: https://sheltered-reef-90572.herokuapp.com/articles/home
 
@@ -54,10 +51,13 @@ The Userstories of the CodeGorilla assignment for week 6 (in Dutch):
 - W6-006
 - W6-009
 - W6-011
+- W7-001
 - W7-002
 - W7-003
+- W7-004
+- W7-009 NOTE: WORKS ONLY LOCAL, ASK FOR LOCAL DEMONSTRATION
 
-# Screenshots
+# Old Screenshots
 
 ![Alt text](https://github.com/Eelkevd/Blog-Laravel/blob/master/BlogCreatepage.png?raw=true "Blog create page")
 
