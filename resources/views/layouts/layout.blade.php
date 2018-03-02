@@ -53,7 +53,7 @@
 
         @include('layouts.header')
 
-        @include ('layouts.sidebar')
+        <!--@include ('layouts.sidebar')-->
 
         <div class="content">
           @yield('content')
