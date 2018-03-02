@@ -13,9 +13,9 @@ class OwnerSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-        'name' => 'Owner',
-    	'email' => 'email@example.com',
-    	'password' => bcrypt('miauw'),
+        'name' => 'Admin',
+    	'email' => 'test@example.com',
+    	'password' => bcrypt('insert'),
     	'owner' => 1,
     	]);
     }
