@@ -18,23 +18,23 @@ class CategoriesController extends Controller
     public function home(Category $category)
    	{
    	    $articles = $category->articles;
-   	    return view('articles.blogs',compact('articles'));   		
+   	    return view('articles.blogs',compact('articles'));
    	}
 
     // Function to create new category
    	public function create(Category $category)
    	{
-   	    return view('articles.create_category');   	
+   	    return view('articles.create_category');
    	}
 
     // Function to store fresh made category
    	public function store(Request $request)
-   	{  
+   	{
    	    $request->validate([
             'name'  => 'required',
         ]);
         $category = Category::create(request(['name']));
-        return redirect('articles/home');
-   		
+        return redirect('articles/categories');
+
    	}
 }

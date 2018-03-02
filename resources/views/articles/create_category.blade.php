@@ -6,11 +6,11 @@
 
 	@section ('content')
 
-	    <!-- The view of the welcome page, not much to do here --> 
+	    <!-- The view of the welcome page, not much to do here -->
 	 	<h1> Create category </h1>
-
+	<div id="blogOverview">
 	    <form method="POST" action="/articles/createcategory">
-	    	
+
 			{{ csrf_field() }}
 
 		    <div id="blogPage">
@@ -26,5 +26,5 @@
 		@include('layouts.error')
 
 		</form>
-
+</div>
     @endsection

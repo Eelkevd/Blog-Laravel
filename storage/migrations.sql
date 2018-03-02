@@ -1,9 +1,0 @@
-1	2014_10_12_000000_create_users_table	1
-2	2014_10_12_100000_create_password_resets_table	1
-3	2018_02_19_155927_create_articles_table	1
-4	2018_02_22_082727_create_comments_table	1
-5	2018_02_22_135511_create_categories_table	1
-6	2018_02_26_141947_create_blogs_table	1
-7	2018_02_28_095018_create_paywalls_table	2
-8	2018_02_28_143453_add_payed_to_users	2
-9	2018_03_01_083130_add_dowloaded_to_paywalls	3
