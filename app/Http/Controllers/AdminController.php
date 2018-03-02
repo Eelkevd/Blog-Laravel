@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB; 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\Request;
+//use Illuminate\Support\Facades\Storage;
+//use ZipArchive;
 
 class AdminController extends Controller
 {
@@ -28,31 +30,29 @@ class AdminController extends Controller
         }
     }
 
+
     // Function to make for each table if the database a backup file
     public function backup()
     {
-        $filename = (base_path('storage/articles.sql'));
-        if (file_exists($filename)){
-            return redirect('owner/owner')->with('alert', 'First remove the old backup from the storage map!');    
+        $command;
+        $dbConnection = env('DB_CONNECTION');
+        $dbName = env('DB_DATABASE');
+        $dbHost = env('DB_HOST');
+        $dbPort = env('DB_PORT');
+        $dbUsername = env('DB_USERNAME');
+        $dbPassword = env('DB_PASSWORD');
+
+        switch ($dbConnection) {
+            case "mysql":
+            $command = "C:\\xampp\mysql\bin\mysqldump $dbName -h$dbHost -P$dbPort -u$dbUsername > database_backup.sql";
+            break;
+
+            case "pgsql":
+            $command = "PGPASSWORD='$dbPassword' pg_dump -h $dbHost -p $dbPort -U $dbUsername $dbName > database_backup.sql";
+            break;
         }
-        else{
-            $article_file = (base_path('storage/articles.sql'));
-        	DB::statement("SELECT * FROM articles INTO OUTFILE '".addslashes($article_file)."'");
-            $blogs_file = (base_path('storage/blogs.sql'));
-        	DB::statement("SELECT * FROM blogs INTO OUTFILE '".addslashes($blogs_file)."'");
-            $categories_file = (base_path('storage/categories.sql'));
-        	DB::statement("SELECT * FROM categories INTO OUTFILE '".addslashes($categories_file)."'");
-            $comments_file = (base_path('storage/comments.sql'));
-        	DB::statement("SELECT * FROM comments INTO OUTFILE '".addslashes($comments_file)."'");
-            $migrations_file = (base_path('storage/migrations.sql'));
-        	DB::statement("SELECT * FROM migrations INTO OUTFILE '".addslashes($migrations_file)."'");
-            $users_file = (base_path('storage/users.sql'));
-        	DB::statement("SELECT * FROM users INTO OUTFILE '".addslashes($users_file)."'");
-            $article_category_file = (base_path('storage/article_category.sql'));
-        	DB::statement("SELECT * FROM article_category INTO OUTFILE '".addslashes($article_category_file)."'");
-            $password_resets_file = (base_path('storage/password_resets.sql'));
-        	DB::statement("SELECT * FROM password_resets INTO OUTFILE '".addslashes($password_resets_file)."'");
-            return redirect('owner/owner')->with('alert', 'Backup made in Storage map!');
-        }
-    }
+       // dd($command);
+        exec($command);
+        return response()->download('database_backup.sql')->deleteFileAfterSend(false);
+    }   
 }
