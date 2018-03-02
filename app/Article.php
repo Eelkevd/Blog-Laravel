@@ -1,8 +1,9 @@
 <?php
 
 namespace App;
-
+use DB;
 use Carbon\Carbon;
+use app\Article;
 
 // Model page for the articles
 class Article extends Model
@@ -48,11 +49,32 @@ class Article extends Model
 	public static function archives()
 	{
 
-		return static::selectRaw('year(created_at) year, monthname(created_at) month, count(*) published')
-			->groupBy('year', 'month')
-			->orderByRaw('min(created_at) desc')
-			->get()
-			->toArray();
+		// return static::selectRaw('year(created_at) year, monthname(created_at) month, count(*) published')
+		// 	->groupBy('year', 'month')
+		// 	->orderByRaw('min(created_at) desc')
+		// 	->get()
+		// 	->toArray();
+		// $result = DB::table('articles')->groupBy(function($data){
+				
+		// 		return $data->groupBy('created_at.year');
+		// 	}, function($data){
+		// 		return $data->groupBy('created_at.month');
+		// 	});
+		// return NULL;
 
+		return Article::orderBy('created_at', 'desc')
+	        ->whereNotNull('created_at')
+	        ->get()
+	        ->groupBy(function(Article $post) {
+	            return $post->created_at->format('F');
+	        })
+	        ->map(function ($item) {
+	            return $item
+	                ->sortByDesc('created_at')
+	                ->groupBy( function ( $item ) {
+	                    return $item->created_at->format('Y');
+	                });
+	            
+	        });
 	}
 }
