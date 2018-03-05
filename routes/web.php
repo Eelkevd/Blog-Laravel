@@ -40,6 +40,11 @@ Route::get('/articles/categories', 'ArticlesController@categories');
 Route::get('/articles/create', 'ArticlesController@create');
 Route::post('/articles', 'ArticlesController@store');
 
+// Page to event calendar page
+Route::get('/event', 'EventController@index');
+Route::get('/event/create', 'EventController@create');
+Route::post('/event/create', 'EventController@store');
+
 // Page of specific article
 Route::get('/articles/{article}', 'ArticlesController@show');
 
@@ -62,3 +67,5 @@ Route::get('/owner/owner/all_bank_data','PaywallController@excell_ALL');
 
 // Page to download invoice
 Route::get('/download/{file}', 'DownloadsController@download');
+
+

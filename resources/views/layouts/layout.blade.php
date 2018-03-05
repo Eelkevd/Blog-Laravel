@@ -18,6 +18,15 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
         <link type="text/css" rel="stylesheet" href="/css/blog2.css" />
 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.css"/>
 
     </head>
 
@@ -31,29 +40,33 @@
                 <li><a class="nav-link" href="{{ route('register') }}">Register</a></li>
             @else
                 <li class="nav-item dropdown"><em>You are logged in as </em>
-                <a href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                    {{ Auth::user()->name }} </span>
-                </a>
-                <div>
-                    <a href="{{ route('logout') }}"
-                        onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();">
-                        Logout
+                    
+                    <a href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        {{ Auth::user()->name }} </span>
                     </a>
 
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    @csrf
-                </form>
-                </div>
+                    <div>
+                        <a href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+                            Logout
+                        </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+
+                    </div>
                 </li>
             @endguest
+
         </ul>
 
         @yield('header')
 
         @include('layouts.header')
 
-        @include ('layouts.sidebar')
+<!--         @include ('layouts.sidebar') -->
 
         <div class="content">
           @yield('content')
