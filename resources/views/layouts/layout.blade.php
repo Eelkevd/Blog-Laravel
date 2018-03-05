@@ -3,6 +3,8 @@
 <html lang="{{ app()->getLocale() }}">
 
     <head>
+        <!-- include google analytics -->
+        @include('google')
 
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,7 +19,6 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
         <link type="text/css" rel="stylesheet" href="/css/blog2.css" />
-
 
     </head>
 
