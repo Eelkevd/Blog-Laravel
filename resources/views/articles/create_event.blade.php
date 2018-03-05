@@ -15,9 +15,6 @@
 
 		    <div id="eventPage">
 
-				<a href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                        {{ Auth::user()->name }} </span>
-                    </a>
                     <input type="text" name="title" placeholder="event name" id="eventTitle"> <br />
 
 				<br />

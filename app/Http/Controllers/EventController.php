@@ -20,11 +20,13 @@ class EventController extends controller {
 
     public function store(Request $request)
     {
-    	// $userid = Auth::id();
-     //    $user = DB::table('users')->where('id', $userid)->first();
-     //    $blogger = $user->name;
+        $userid = Auth::id();
+        $user = DB::table('users')->where('id', $userid)->first();
+        $blogger = $user->name;
+        $event_name= $request->title;
+        $title = $blogger . ":" . " " . $event_name;
 
-        // $userTitle = $blogger.'title';
+        $request->merge(['title' => $title]);
 
     	$request->validate([
             'title'  => 'required',
