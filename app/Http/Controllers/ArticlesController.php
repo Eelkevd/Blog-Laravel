@@ -8,7 +8,7 @@ use Spatie\Activitylog\Models\Activity ;
 use App\Blog;
 use App\Category;
 use App\Article;
-use Illuminate\Http\Request;
+use Request;
 
 class ArticlesController extends Controller
 {
@@ -28,7 +28,13 @@ class ArticlesController extends Controller
     // Function to show specific article
     public function show(Article $article)
     {
-       activity()->log('pageview');
+
+      activity()
+       ->performedOn($article)
+
+       ->withProperties(['path' => Request::path()])
+       ->log('pageview');
+
 	     return view('articles.show', compact('article'));
     }
 

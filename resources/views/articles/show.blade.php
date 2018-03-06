@@ -5,11 +5,12 @@
         <div>
         	<!-- The view to show individual blogs, their categories and their comment section -->
             <h1>{{ $article -> title }}</h1>
+              <p id="demo"></p>
 
             {{ $article -> bodytext }}
 
         	<hr>
-        		
+
             <!--Show all comments-->
         	<div class="comments">
 
@@ -45,7 +46,7 @@
         				<div class="form-group">
 
         				    <button type="submit" id="btnSubComment" align="center" class="btn btn-primary"> Submit </button>
-        					
+
                         </div>
 
         			</form>
@@ -54,8 +55,30 @@
 
         		</div>
 
-        	</div>	
+        	</div>
 
         </div>
+        <script>
 
+          $(document).ready(function() {
+            var myVar = setInterval(myTimer, 1000);
+            var currentLocation = window.location;
+
+            function myTimer() {
+              var d = new Date();
+              document.getElementById("demo").innerHTML = d.toLocaleTimeString()
+              ;
+              if (currentLocation != window.location) {
+                var visitedTime = myVar;
+                     clearInterval(myVar);
+                     alert('Test');
+
+              }
+          }
+            // document.getElementById("demo").innerHTML = visitedTime.toLocaleTimeString();
+          });
+
+
+
+        </script>
     @endsection
