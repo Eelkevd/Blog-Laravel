@@ -26,6 +26,30 @@ class Article extends Model
 		$this->comments()->create(compact('body'));
 	}
 
+	// Couple comments with articles
+	public function ratings()
+	{
+		return $this->hasMany(Rating::class);
+	}
+
+	// Couple a new comment to the other comments of an article
+	public function addRating($rating)
+	{
+		$this->ratings()->create(compact('rating'));
+	}
+
+		// Couple blog with articles
+	public function average_rating()
+	{
+		return $this->belongsTo(AverageRating::class);
+	}
+
+		// Couple updated average to an article
+	public function addAverage_rating($average_rating)
+	{
+		$this->average_rating()->create(compact('average_rating'));
+	}
+
 	// Couple blog with articles
 	public function blogs()
 	{

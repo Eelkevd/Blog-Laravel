@@ -50,9 +50,28 @@
 
         			</form>
 
-        			@include ('layouts.error')
+                    <form method="POST" action="/articles/{{ $article->id }}/ratings">
 
-        		</div>
+                        {{ csrf_field() }}
+
+                        <div class="form-group">
+
+                            <textarea name="rating" placeholder="give your rating 0-9" class="form=control" required></textarea>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <button type="submit" id="btnSubComment" align="center" class="btn btn-primary"> Rate the article </button>
+                            
+                        </div>
+
+                    </form>
+
+                    @include ('layouts.error')
+
+                </div>
+
 
         	</div>	
 

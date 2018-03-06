@@ -49,6 +49,9 @@ Route::post('/event/create', 'EventController@store');
 Route::get('/articles/{article}', 'ArticlesController@show');
 
 // Page to create and store a new comment
+Route::post('/articles/{article}/ratings', 'RatingsController@store');
+
+// Page to create and store a new comment
 Route::post('/articles/{article}/comments', 'CommentsController@store');
 
 // Page to find all articles of selected category
