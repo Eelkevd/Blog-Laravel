@@ -11,7 +11,7 @@ use App\Blog;
 use App\Category;
 use App\Article;
 
-class EventController extends controller {
+class EventController extends Controller {
 
 	public function __construct()
     {
