@@ -3,8 +3,6 @@
 <html lang="{{ app()->getLocale() }}">
 
     <head>
-        <!-- include google analytics -->
-        @include('google')
 
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
