@@ -62,3 +62,6 @@ Route::get('/owner/owner/sepatool','PaywallController@excell');
 Route::get('/owner/owner/all_bank_data','PaywallController@excell_ALL');
 
 Route::get('/download/{file}', 'DownloadsController@download');
+
+// See the stats
+Route::get('/owner/stats', 'StatsController@show');

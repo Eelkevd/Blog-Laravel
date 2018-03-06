@@ -4,6 +4,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Spatie\Activitylog\Models\Activity ;
 use App\Blog;
 use App\Category;
 use App\Article;
@@ -20,13 +21,14 @@ class ArticlesController extends Controller
     // Function to get all blogs with latest on top
     public function blogs()
     {
-		    $articles = Article::latest()->get();
-    	   return view('articles.blogs', compact('articles'));
+		  $articles = Article::latest()->get();
+    	return view('articles.blogs', compact('articles'));
     }
 
     // Function to show specific article
     public function show(Article $article)
     {
+       activity()->log('pageview');
 	     return view('articles.show', compact('article'));
     }
 
@@ -72,4 +74,5 @@ class ArticlesController extends Controller
         $article->categories()->attach($request->subscribe);
     	return redirect('articles/home');
     }
+
 }
