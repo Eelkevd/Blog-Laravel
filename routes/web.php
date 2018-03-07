@@ -48,20 +48,20 @@ Route::get('/articles/{article}', 'ArticlesController@show');
 Route::post('/articles/{article}/comments', 'CommentsController@store');
 
 // Page to find all articles of selected category
-Route::get('/articles/categories/{category}','CategoriesController@home');
+Route::get('/articles/categories/{category}', 'CategoriesController@home');
 
 // Page for the PaywallController
 Route::post('/paywall', 'PaywallController@store');
 
 // Page to admin page
-Route::get('/owner/owner','AdminController@home');
+Route::get('/owner/owner', 'AdminController@home');
 
 // Page to make backup
-Route::get('/owner/owner/backup','AdminController@backup');
-Route::get('/owner/owner/sepatool','PaywallController@excell');
-Route::get('/owner/owner/all_bank_data','PaywallController@excell_ALL');
+Route::get('/owner/owner/backup', 'AdminController@backup');
+Route::get('/owner/owner/sepatool', 'PaywallController@excell');
+Route::get('/owner/owner/all_bank_data', 'PaywallController@excell_ALL');
 
 Route::get('/download/{file}', 'DownloadsController@download');
 
-// See the stats
+// See the statistics
 Route::get('/owner/stats', 'StatsController@show');
