@@ -24,10 +24,13 @@
 				Event ends at:<br>
 				<input type="date" name="end_date" min="2018-01-02"><br><br>
 
-				<input type="submit" id="btnSubBlog" align="center" value="submit">
+				<input type="submit" class="btn btn-primary" align="center" value="submit">
 
 			</div>
+			<p>
+				<br>
 			<a href="/event">Return</a></li>
+		</p>
 
 		@include('layouts.error')
 

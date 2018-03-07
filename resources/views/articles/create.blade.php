@@ -33,7 +33,7 @@
 
 	            <br />
 
-	            <input type="submit" id="btnSubBlog" align="center" value="submit">
+	            <input type="submit" class="btn btn-primary" align="center" value="submit">
 
 	       	</div>
 
@@ -45,7 +45,7 @@
 	    @elseif ( $num_articles == 5 AND $payed == '0')
 
 	     	@include ('paywall.bank')
-	     	
+
 	    @endif
 
     @endsection
