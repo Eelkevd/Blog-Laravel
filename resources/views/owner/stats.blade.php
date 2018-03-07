@@ -30,8 +30,12 @@
 </table>
 <br />
 
+<<<<<<< HEAD
 		<h3>Site statistics</h3>
       <table style="border: 1px solid black; margin: 20px auto;">
+=======
+      <table style="border: 1px solid black;">
+>>>>>>> working XML file (index) with latest updated aricle and blog
         <tr style="border-bottom: 1px solid black;">
           <th>article</th>
           <th>path</th>
