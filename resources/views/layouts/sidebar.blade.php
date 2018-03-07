@@ -1,5 +1,37 @@
 <div class="sidebar">
   <div class="sidebar-module">
+
+    <ul class="">
+
+        <!-- Authentication Links -->
+        @guest
+            <li><a class="" href="{{ route('login') }}">Login</a></li>
+            <li><a class="k" href="{{ route('register') }}">Register</a></li>
+        @else
+            <li class=""><em>You are logged in as </em>
+
+                <a href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    {{ Auth::user()->name }} </span>
+                </a>
+
+                <div>
+                    <a href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+                        Logout
+                    </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+
+                </div>
+            </li>
+        @endguest
+
+    </ul>
+  </div>
+  <div class="sidebar-module">
       <h4>Archives</h4>
         <ol class="list-unstyled">
 

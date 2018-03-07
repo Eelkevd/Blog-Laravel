@@ -25,11 +25,10 @@ ul {
 .sidebar {
   background-color: #cfd1cf;
   float: left;
-  width: 200px;
+  width: 150px;
 	height: 100%;
   padding: 10px;
   margin-right: 10px;
-  margin-left: 15px;
 }
 
 .sidebar-module{
@@ -42,6 +41,10 @@ ul {
 
 .content{
 	padding-top: 20px;
+	border: 1px solid green;
+	width: 700px;
+	float:left;
+	display: block;
 }
 
 
@@ -73,20 +76,21 @@ ul {
 
 /* Style the page where the blogs are created */
 #blogPage{
-
     background-color: gray;
    	text-align: center;
 		max-width: 600px;
 		margin: 0 auto;
 		padding: 20px;
+		border: 1px solid black;
 }
 
 /* Style the page where  blogs are displayed */
 #blogOverview {
 	background-color: white;
-	max-width: 800px;
+	width: 650px;
 	margin: 10px auto;
 	padding: 20px;
+	border-bottom: 1px solid black;
 }
 
 .border{
@@ -163,11 +167,26 @@ a, a:hover {
   overflow: hidden;
 	text-align: center;
 	display: inline-block;
+	width: 100%;
+	margin: 0 auto;
 }
 
 li.button {
 	margin:3px;
 	float:left;
+}
+
+li.logo{
+	background-color: #2a2a2a;
+	width: 150px;
+	float:left;
+	margin:3px 3px 3px 0;
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 10px 6px;
+  text-decoration: none;
+	font-variant: small-caps;
 }
 
 /* Style the added categories */

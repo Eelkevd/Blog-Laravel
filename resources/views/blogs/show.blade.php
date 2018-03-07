@@ -1,7 +1,6 @@
 @extends ('layouts.layout')
 
     @section ('content')
-		<div  id="blogOverview">
 
 			<!-- The view to show a selected blog with title, description and all articles -->
 		 	<h2 class="article-title">
