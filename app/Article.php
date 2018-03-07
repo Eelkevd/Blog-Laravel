@@ -1,8 +1,9 @@
 <?php
 
 namespace App;
-
+use DB;
 use Carbon\Carbon;
+use app\Article;
 
 // Model page for the articles
 class Article extends Model
@@ -43,13 +44,23 @@ class Article extends Model
 		}
 	}
 
+	// Returns sorted blogs by date
 	public static function archives()
 	{
-		return static::selectRaw('year(created_at) year, monthname(created_at) month, count(*) published')
-			->groupBy('year', 'month')
-			->orderByRaw('min(created_at) desc')
-			->get()
-			->toArray();
+
+	return Article::orderBy('created_at', 'desc')
+	    ->whereNotNull('created_at')
+	    ->get()
+	    ->groupBy(function(Article $post) {
+	        return $post->created_at->format('F');
+	    })
+	    ->map(function ($item) {
+	        return $item
+	            ->sortByDesc('created_at')
+	            ->groupBy( function ( $item ) {
+	                return $item->created_at->format('Y');
+	            });
+	    });
 	}
 
 }

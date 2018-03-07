@@ -19,7 +19,6 @@ Auth::routes();
 //Homepage
 Route::get('/', 'BlogController@index')->name('home');
 Route::get('/articles', 'ArticlesController@home');
-// Route::get('/articles/home', 'ArticlesController@home');
 
 // Page of specific blog
 Route::get('/blogs/{blog}', 'BlogController@show');
@@ -41,6 +40,11 @@ Route::get('/articles/categories', 'ArticlesController@categories');
 Route::get('/articles/create', 'ArticlesController@create');
 Route::post('/articles', 'ArticlesController@store');
 
+// Page to event calendar page
+Route::get('/event', 'EventController@index');
+Route::get('/event/create', 'EventController@create');
+Route::post('/event/create', 'EventController@store');
+
 // Page of specific article
 Route::get('/articles/{article}', 'ArticlesController@show');
 
@@ -61,6 +65,7 @@ Route::get('/owner/owner/backup', 'AdminController@backup');
 Route::get('/owner/owner/sepatool', 'PaywallController@excell');
 Route::get('/owner/owner/all_bank_data', 'PaywallController@excell_ALL');
 
+// Page to download invoice
 Route::get('/download/{file}', 'DownloadsController@download');
 
 // See the statistics
@@ -71,3 +76,6 @@ Route::get('/sitemap', 'SitemapController@index');
 Route::get('/sitemap/articles', 'SitemapController@articles');
 Route::get('/sitemap/categories', 'SitemapController@categories');
 Route::get('/sitemap/blogs', 'SitemapController@blogs');
+
+// See the stats
+Route::get('/owner/stats', 'StatsController@show');

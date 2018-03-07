@@ -3,16 +3,11 @@
       <h4>Archives</h4>
         <ol class="list-unstyled">
 
-          @foreach ( $archives as $stats )
-
-            <li>
-                <a href="/articles/?month={{ $stats['month'] }}&year={{ $stats['year']}}">
-                  {{ $stats['month'] . ' ' .  $stats['year'] }}
-                </a>
-
-            </li>
-
-          @endforeach
+             @foreach($archives as $year => $months)
+                <h6 class="mb-0">
+                  <br>
+                </h6>
+              @endforeach
 
         </ol>
     </div>
