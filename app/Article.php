@@ -56,18 +56,16 @@ class Article extends Model
 		return $this->belongsTo(Blog::class);
 	}
 
-	public function scopeFilter($query, $filters){
-
-		if($month = $filters['month']){
-
+	public function scopeFilter($query, $filters)
+	{
+		if($month = $filters['month'])
+		{
 			$query->whereMonth('created_at', Carbon::parse($month)->month);
 		}
-
-		if($year= $filters['year']){
-
+		if($year= $filters['year'])
+		{
 			$query->whereYear('created_at', $year);
 		}
-
 	}
 
 	// Returns sorted blogs by date
@@ -85,7 +83,8 @@ class Article extends Model
 	            ->sortByDesc('created_at')
 	            ->groupBy( function ( $item ) {
 	                return $item->created_at->format('Y');
-	            }); 
+	            });
 	    });
 	}
+
 }

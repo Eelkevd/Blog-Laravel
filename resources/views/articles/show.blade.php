@@ -5,11 +5,12 @@
         <div>
         	<!-- The view to show individual blogs, their categories and their comment section -->
             <h1>{{ $article -> title }}</h1>
+              <p id="demo"></p>
 
             {{ $article -> bodytext }}
 
         	<hr>
-        		
+
             <!--Show all comments-->
 
             <h3>Comment section</h3>
@@ -67,7 +68,7 @@
         				<div class="form-group">
 
         				    <button type="submit" id="btnSubComment" align="center" class="btn btn-primary"> Submit </button>
-        					
+
                         </div>
 
         			</form>
@@ -95,7 +96,7 @@
                 </div>
 
 
-        	</div>	
+        	</div>
 
         </div>
 
