@@ -18,10 +18,12 @@
 			</p>
 
 		 	<hr>
-		  	@foreach($blog->articles as $artcile)
-		   		<span>{{{ $artcile->title }}}</span>
-		   		<p class=”lead”>{{{ $artcile->bodytext }}}</p>
-		   		<hr>
+		 	<!-- Shows all articles per selected blogger -->
+		  	@foreach($articles as $article)
+
+		  		@include('blogs.articles')
+                <hr>
+
 		   	@endforeach
 		</div>
 	@endsection

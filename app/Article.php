@@ -26,24 +26,46 @@ class Article extends Model
 		$this->comments()->create(compact('body'));
 	}
 
+	// Couple comments with articles
+	public function ratings()
+	{
+		return $this->hasMany(Rating::class);
+	}
+
+	// Couple a new comment to the other comments of an article
+	public function addRating($rating)
+	{
+		$this->ratings()->create(compact('rating'));
+	}
+
+		// Couple blog with articles
+	public function average_rating()
+	{
+		return $this->belongsTo(AverageRating::class);
+	}
+
+		// Couple updated average to an article
+	public function addAverage_rating($average_rating, $article_id)
+	{
+		$this->average_rating()->create(compact('average_rating', 'article_id'));
+	}
+
 	// Couple blog with articles
 	public function blogs()
 	{
 		return $this->belongsTo(Blog::class);
 	}
 
-	public function scopeFilter($query, $filters){
-
-		if($month = $filters['month']){
-
+	public function scopeFilter($query, $filters)
+	{
+		if($month = $filters['month'])
+		{
 			$query->whereMonth('created_at', Carbon::parse($month)->month);
 		}
-
-		if($year= $filters['year']){
-
+		if($year= $filters['year'])
+		{
 			$query->whereYear('created_at', $year);
 		}
-
 	}
 
 	// Returns sorted blogs by date
@@ -61,7 +83,8 @@ class Article extends Model
 	            ->sortByDesc('created_at')
 	            ->groupBy( function ( $item ) {
 	                return $item->created_at->format('Y');
-	            }); 
+	            });
 	    });
 	}
+
 }

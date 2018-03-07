@@ -26,11 +26,11 @@ class User extends Authenticatable
     ];
 
     // Couple blogs with user
-    public function blogs() 
+    public function blogs()
     {
       return $this->hasMany(Blog::class);
     }
-    
+
     // Couple paywall with user
     public function paywalls()
     {
