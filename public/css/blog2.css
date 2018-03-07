@@ -62,6 +62,15 @@ ul {
 	padding: 3px;
 }
 
+.commentSection {
+	text-align: left;
+	margin-top: 15px;
+}
+
+.card-block {
+	float: left;
+}
+
 /* Style the page where the blogs are created */
 #blogPage{
 

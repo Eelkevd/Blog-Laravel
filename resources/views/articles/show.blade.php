@@ -5,11 +5,26 @@
         <div>
         	<!-- The view to show individual blogs, their categories and their comment section -->
             <h1>{{ $article -> title }}</h1>
-              <p id="demo"></p>
 
-            {{ $article -> bodytext }}
+            <p>{!! nl2br(e($article -> bodytext))!!}</p>
 
         	<hr>
+
+            <div id="articleRating">
+
+                @foreach ($article->ratings as $index => $rating)
+                    @if($index==0)
+                    <h4>
+
+                    Rating: {{ $article -> average_rating }}
+
+                    </h4>
+                    @endif
+                @endforeach
+
+            </div>
+
+            <hr>
 
             <!--Show all comments-->
 
@@ -19,9 +34,9 @@
 
         		@foreach ($article->comments as $comment)
 
-        			<li class="list-group-item">
+        			<li class="list-group-item" >
 
-        				{{ $comment->body}}
+        				<p class="commentSection">Comment: {{ $comment->body}} </p>
 
         			</li>
 
@@ -31,22 +46,6 @@
 
             <hr>
 
-            <h3>Average rating</h3>
-            <div id="articleRating">
-
-                @foreach ($article->ratings as $index => $rating)
-                    @if($index==0)
-                    <li class="list-group-item">
-
-                    Average rating is: {{ $article -> average_rating }}
-
-                    </li>
-                    @endif
-                @endforeach
-                
-
-
-            </div>
 
         	<hr>
 
@@ -79,7 +78,7 @@
 
                         <div class="form-group">
 
-                            <textarea name="rating" placeholder="give your rating 0-9" class="form=control" required></textarea>
+                            <input type="number" name="rating" placeholder="give your rating 0-9" class="form=control" required>
 
                         </div>
 
