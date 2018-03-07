@@ -26,7 +26,7 @@ class AdminController extends Controller
             return view('owner.owner');   
         }
     	else {
-            return redirect('articles/home');
+            return redirect('/');
         }
     }
 
