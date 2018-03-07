@@ -7,16 +7,19 @@ A blog apllication build with laravel based on the userstories as described in t
 
 ## Follow the progression: https://trello.com/b/A5e2beCl/blog-laravel-week-8
 
+### Description
+On our blog platform it's possible to read the articles of your favourite blogger, see when you can meet them at their own events or write your own articles on your own blog profile. To create your own blog, write your own articles, create your own categories or to put your events on the calendar, the blogger needs to register him or herself. After the blogger has published 5 articles, the blogger is supposed to give permission to pay once the amount of 9,99 euros so the blogger can keep writing articles. As admin/owner, it's possible to make an excel file with all the information about the financial transactions to collect the payments of the bloggers. It's also possible for the admin/owner to make a local backup of the database. The reader can score articles of each blogger with a score from 0-9 so the most popular article of a blogger will be on top of their homepage. If a reader doesn't have a favourite blogger, but just wants to read all articles with the most recent ones on top he or she can go to the articles page with all the articles of all the bloggers.
+
 ### Workflow Week 8
-- monday:
-- tuesday:
-- wednesday: 
+- monday: read new userstories, made new shared Trello, updated old Github repository and readme, pitched project and handed in project plan, userstories W8-002 & W8-003 work in progress;
+- tuesday: finished userstories W8-002 & W8-003, userstories W8-001, W8-005 & W8-006 work in progress;
+- wednesday: finished userstories W8-005 & W8-006, userstory W8-001 put on hold, userstory W8-004 work in progress, soft skill lesson;
 - thursday: 
 - friday:
 
 ## To test the owner functionalities log in with:
-email: email@example.com
-password: miauw
+- email: admin@email.com
+- password: miauw
 
 ## Look for the latest online demo at: https://sheltered-reef-90572.herokuapp.com/
 
@@ -31,6 +34,10 @@ The Userstories of the CodeGorilla assignment for week 8 (in Dutch):
 - W8-006 Lezer:      wil ik op de voorpagina van het blog een overzicht van de hoogst gewaarde artikelen zien die ik zelf nog niet heb gelezen.
 
 ## Finished userstories
+- W8-002
+- W8-003
+- W8-005
+- W8-006
 
 # Old Screenshots
 
