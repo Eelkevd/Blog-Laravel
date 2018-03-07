@@ -7,6 +7,6 @@ class AverageRating extends Model
 	// Couple articles with average
     public function post()
     {
-    	return $this->belongsTo(Article::class);
+    	return $this->hasMany(Article::class);
     }
 }

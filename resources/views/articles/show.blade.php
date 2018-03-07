@@ -11,6 +11,9 @@
         	<hr>
         		
             <!--Show all comments-->
+
+            <h3>Comment section</h3>
+
         	<div class="comments">
 
         		@foreach ($article->comments as $comment)
@@ -24,6 +27,25 @@
         		@endforeach
 
         	</div>
+
+            <hr>
+
+            <h3>Average rating</h3>
+            <div id="articleRating">
+
+                @foreach ($article->ratings as $index => $rating)
+                    @if($index==0)
+                    <li class="list-group-item">
+
+                    Average rating is: {{ $article -> average_rating }}
+
+                    </li>
+                    @endif
+                @endforeach
+                
+
+
+            </div>
 
         	<hr>
 

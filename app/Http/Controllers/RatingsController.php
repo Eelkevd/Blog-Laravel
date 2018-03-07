@@ -37,9 +37,13 @@ class RatingsController extends Controller
             DB::table('average_ratings')
             ->where ('article_id', $article->id)
             ->update(['average_rating' => $avgRating]);
+
+            DB::table('articles')
+            ->where ('id', $article->id)
+            ->update(['average_rating' => $avgRating]);
+
         }
         // $article->id;
-
 
         // Put average in average table
         
