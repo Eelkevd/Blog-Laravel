@@ -20,11 +20,11 @@ class SitemapController extends Controller
     ])->header('Content-Type', 'text/xml');
   }
 
-  public function posts()
+  public function articles()
   {
-      $article = Article::all()->where('category_id', '!=', 21)->get();
-      return response()->view('sitemap.posts', [
-          'articles' => $article,
+      $articles = Article::latest()->get();
+      return response()->view('sitemap.articles', [
+          'articles' => $articles,
       ])->header('Content-Type', 'text/xml');
   }
 
@@ -36,9 +36,9 @@ class SitemapController extends Controller
       ])->header('Content-Type', 'text/xml');
   }
 
-  public function blog()
+  public function blogs()
   {
-      $blog = Blog::active()->orderBy('updated_at', 'desc')->get();
+      $blog = Blog::latest()->get();
       return response()->view('sitemap.blogs', [
           'blogs' => $blog,
       ])->header('Content-Type', 'text/xml');
