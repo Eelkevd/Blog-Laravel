@@ -20,9 +20,9 @@ class CreateArticlesTable extends Migration
             $table->string('title');
             $table->text('bodytext');
             $table->timestamps();
-            $table->integer('average_rating');
+            $table->integer('average_rating')->nullable();
 
-            $table->foreign('average_rating')->references('average_rating')->on('average_ratings');
+        //    $table->foreign('average_rating')->references('average_rating')->on('average_ratings');
         });
 
     }

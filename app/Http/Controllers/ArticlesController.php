@@ -5,10 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Spatie\Activitylog\Models\Activity ;
+use Request as Path;
+use Illuminate\Http\Request;
 use App\Blog;
 use App\Category;
 use App\Article;
-use Request;
+// Voor de site analytics is request->path nodig, maar deze werk op use Request.
+// use Request en use Illuminate\http\request gaan niet samen
+// dus of je kunt artikelen uploaden, of je kunt statistiek bijhouden
+
 
 class ArticlesController extends Controller
 {
@@ -31,7 +36,7 @@ class ArticlesController extends Controller
       // log view of the page with path and id of the visited article
       activity()
        ->performedOn($article)
-       ->withProperties(['path' => Request::path()])
+       ->withProperties(['path' => Path::path()])
        ->log('pageview');
 
 	     return view('articles.show', compact('article'));
@@ -77,7 +82,7 @@ class ArticlesController extends Controller
 
         $article = Article::create(request(['blog_id', 'user_id', 'title', 'bodytext']));
         $article->categories()->attach($request->subscribe);
-    	return redirect('/');
+    	return redirect('articles/blogs');
     }
 
     public function scopeFilter($query, $filters){
