@@ -32,7 +32,7 @@
 
 
 		<h3>Site statistics</h3>
-      <table style="border: 1px solid black; margin: 20px auto;">
+      <table style="border: 1px solid black; margin:20px;">
 
       <table style="border: 1px solid black;">
         <tr style="border-bottom: 1px solid black;">
