@@ -21,7 +21,6 @@ class CreateAverageRating extends Migration
         });
     }
 
-
     /**
      * Reverse the migrations.
      *

@@ -45,9 +45,9 @@ class Article extends Model
 	}
 
 		// Couple updated average to an article
-	public function addAverage_rating($average_rating)
+	public function addAverage_rating($average_rating, $article_id)
 	{
-		$this->average_rating()->create(compact('average_rating'));
+		$this->average_rating()->create(compact('average_rating', 'article_id'));
 	}
 
 	// Couple blog with articles
