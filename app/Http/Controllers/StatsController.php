@@ -8,6 +8,8 @@ use Spatie\Activitylog\Models\Activity;
 class StatsController extends Controller
 {
   public function show(){
-      Activity::all();
-  }
+    $lastLoggedActivity = Activity::all();
+
+    return view('owner.stats', compact('lastLoggedActivity'));
+    }
 }
