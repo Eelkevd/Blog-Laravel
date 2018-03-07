@@ -65,3 +65,9 @@ Route::get('/download/{file}', 'DownloadsController@download');
 
 // See the statistics
 Route::get('/owner/stats', 'StatsController@show');
+
+// Get the sitemaps
+Route::get('/sitemap', 'SitemapController@index');
+Route::get('/sitemap/articles', 'SitemapController@articles');
+Route::get('/sitemap/categories', 'SitemapController@categories');
+Route::get('/sitemap/blogs', 'SitemapController@blogs');

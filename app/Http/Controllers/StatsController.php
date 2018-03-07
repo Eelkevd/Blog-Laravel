@@ -10,8 +10,6 @@ class StatsController extends Controller
   public function show(){
     $lastLoggedActivity = Activity::all();
 
-
-
     return view('owner.stats', compact('lastLoggedActivity'));
     }
 }

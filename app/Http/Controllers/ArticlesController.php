@@ -18,7 +18,7 @@ class ArticlesController extends Controller
         $this->middleware('auth', ['only' => 'create']);
     }
 
-    // Function to get all blogs with latest on top
+    // Function to get all articles with latest on top
     public function blogs()
     {
 		  $articles = Article::latest()->get();
@@ -28,10 +28,9 @@ class ArticlesController extends Controller
     // Function to show specific article
     public function show(Article $article)
     {
-
+      // log view of the page with path and id of the visited article
       activity()
        ->performedOn($article)
-
        ->withProperties(['path' => Request::path()])
        ->log('pageview');
 
