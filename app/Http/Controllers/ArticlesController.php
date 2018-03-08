@@ -31,7 +31,8 @@ class ArticlesController extends Controller
     // Function to get all articles with latest on top
     public function blogs()
     {
-		  $articles = Article::latest()->get();
+      $articles = Article::latest()
+      ->get();
     	return view('articles.blogs', compact('articles'));
     }
 
@@ -96,7 +97,7 @@ class ArticlesController extends Controller
     }
 
 
-    public function year( $year)
+    public function year($year)
   	{
   		$articles = Article::Latest();
       	if ($month = request('month')) {
@@ -107,6 +108,7 @@ class ArticlesController extends Controller
       	}
       	$articles = $articles->get();
       	return view('articles.blogs', compact('articles'));
+
   	}
 
 

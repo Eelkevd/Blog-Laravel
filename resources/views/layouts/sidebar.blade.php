@@ -33,18 +33,19 @@
   </div>
   <div class="sidebar-module">
       <h4>Archives</h4>
-        <ol class="list-unstyled">
 
+        <ol class="list-unstyled">
           @foreach($archives as $year => $months)
            <li>
-             <a href="/{{$year}}/articles">
-              {{ $year }}
+             <a href="/articles?month={{$year}}&year=2018">
+               {{ $year }}
              </a>
            </li>
-
           @endforeach
         </ol>
     </div>
+
+
 
     <div class="sidebar-module">
       <h4>Check our:</h4>

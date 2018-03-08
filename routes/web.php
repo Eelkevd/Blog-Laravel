@@ -19,7 +19,8 @@ Auth::routes();
 //Articles Controller
 Route::get('/', 'BlogController@index')->name('home');
 Route::get('/articles', 'ArticlesController@home');
-Route::get('/{year}/articles', 'ArticlesController@year');
+Route::get('/articles{year}', 'ArticlesController@home');
+
 // Page of specific blog
 Route::get('/blogs/{blog}', 'BlogController@show');
 

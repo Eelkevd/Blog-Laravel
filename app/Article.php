@@ -72,8 +72,6 @@ class Article extends Model
 	// Returns sorted blogs by date
 	public static function archives()
 	{
-
-
 				return Article::orderBy('created_at', 'desc')
 						->whereNotNull('created_at')
 						->get()
