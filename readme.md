@@ -1,27 +1,27 @@
 # Laravel blog Eelke, Jorik & Esmeralda
 ### Blog week 8
 A blog application to share your writings and comments with the world!
-A pair programming collaboration of Eelke, Jorik & Esmeralda, both working mostly on Eelke's laptop and github account (although Jorik and Esmeralda are collaborators on that github account). 
+A pair programming collaboration of Eelke, Jorik & Esmeralda.
 
 A blog apllication build with laravel based on the userstories as described in the CodeGorilla assignment of week 8 (discussed down below) and a working online demo with Heroku. 
 
 ## Follow the progression: https://trello.com/b/A5e2beCl/blog-laravel-week-8
 
 ### Description
-On our blog platform it's possible to read the articles of your favourite blogger, see when you can meet them at their own events or write your own articles on your own blog profile. To create your own blog, write your own articles, create your own categories or to put your events on the calendar, the blogger needs to register him or herself. After the blogger has published 5 articles, the blogger is supposed to give permission to pay once the amount of 9,99 euros so the blogger can keep writing articles. As admin/owner, it's possible to make an excel file with all the information about the financial transactions to collect the payments of the bloggers. It's also possible for the admin/owner to make a local backup of the database. The reader can score articles of each blogger with a score from 0-9 so the most popular article of a blogger will be on top of their homepage. If a reader doesn't have a favourite blogger, but just wants to read all articles with the most recent ones on top he or she can go to the articles page with all the articles of all the bloggers.
+On our blog platform it's possible to read the articles of your favourite blogger, see when you can meet them at their own events or write your own articles on your own blog profile. To create your own blog, write your own articles, create your own categories or to put your events on the calendar, the blogger needs to register him or herself. After the blogger has published 5 articles, the blogger is supposed to give permission to pay once the amount of 9,99 euros so the blogger can keep sharing their articles with the world. As admin/owner, it's possible to make an excel file with all the information about the financial transactions to collect the payments of the bloggers. It's also possible for the admin/owner to make a local backup of the database and to create a sitemap for the whole platform. The reader can score articles of each blogger with a score from 0-9 so the most popular article of a blogger will be on top of their homepage. If a reader doesn't have a favourite blogger, but just wants to read all articles with the most recent ones on top he or she can go to the articles page with all the articles of all the bloggers. The reader with a specific interest can go to the categories page to find all the articles coupled to their favourite category.
 
 ### Workflow Week 8
 - monday: read new userstories, made new shared Trello, updated old Github repository and readme, pitched project and handed in project plan, userstories W8-002 & W8-003 work in progress;
 - tuesday: finished userstories W8-002 & W8-003, userstories W8-001, W8-005 & W8-006 work in progress;
 - wednesday: finished userstories W8-005 & W8-006, userstory W8-001 put on hold, userstory W8-004 work in progress, soft skill lesson;
-- thursday: 
-- friday:
+- thursday: Put all finished userstories on Heroku, prepared demo, tested laptop for demo, finished userstory W8-004;
+- friday: Prepare demo
 
 ## To test the owner functionalities log in with:
 - email: admin@email.com
 - password: miauw
 
-## Look for the latest online demo at: https://sheltered-reef-90572.herokuapp.com/
+## Look for the latest online demo at: http://powerful-peak-61963.herokuapp.com/
 
 ## Userstories
 The Userstories of the CodeGorilla assignment for week 8 (in Dutch):
@@ -38,12 +38,13 @@ The Userstories of the CodeGorilla assignment for week 8 (in Dutch):
 - W8-003
 - W8-005
 - W8-006
+- W8-004
 
-# Old Screenshots
+# Screenshots
 
-![Alt text](https://github.com/Eelkevd/Blog-Laravel/blob/master/BlogCreatepage.png?raw=true "Blog create page")
+![Alt text](https://github.com/Eelkevd/Blog-Laravel/blob/master/AllBloggers.png?raw=true "Bloggers page")
 
-![Alt text](https://github.com/Eelkevd/Blog-Laravel/blob/master/BlogCategorypage.png?raw=true "Blog create page")
+![Alt text](https://github.com/Eelkevd/Blog-Laravel/blob/master/EventCalendar.png?raw=true "Blog event page")
 
 ### ARCHIVE
 ### Trello
@@ -133,4 +134,8 @@ The Userstories of the CodeGorilla assignment for week 7 (in Dutch):
 - W7-004
 - W7-009 NOTE: WORKS ONLY LOCAL, ASK FOR LOCAL DEMONSTRATION
 
+# Old Screenshots
 
+![Alt text](https://github.com/Eelkevd/Blog-Laravel/blob/master/BlogCreatepage.png?raw=true "Blog create page")
+
+![Alt text](https://github.com/Eelkevd/Blog-Laravel/blob/master/BlogCategorypage.png?raw=true "Blog create page")
