@@ -18,6 +18,8 @@ class CreateAverageRating extends Migration
             $table->integer('article_id');
             $table->integer('average_rating');
             $table->timestamps();
+
+            $table->foreign('average_rating')->references('average_rating')->on('articles');
         });
     }
 
