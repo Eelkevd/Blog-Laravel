@@ -8,7 +8,8 @@ use Spatie\Activitylog\Models\Activity ;
 use App\Blog;
 use App\Category;
 use App\Article;
-use Request;
+use Illuminate\Http\Request;
+use Request as Path;
 
 class ArticlesController extends Controller
 {
@@ -31,7 +32,7 @@ class ArticlesController extends Controller
       // log view of the page with path and id of the visited article
       activity()
        ->performedOn($article)
-       ->withProperties(['path' => Request::path()])
+       ->withProperties(['path' => Path::path()])
        ->log('pageview');
 
 	     return view('articles.show', compact('article'));
