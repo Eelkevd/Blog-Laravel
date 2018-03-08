@@ -39,9 +39,9 @@ class Article extends Model
 	}
 
 		// Couple blog with articles
-	public function average_rating()
+	public function average_ratings()
 	{
-		return $this->belongsTo(AverageRating::class);
+		return $this->hasOne(AverageRating::class);
 	}
 
 		// Couple updated average to an article

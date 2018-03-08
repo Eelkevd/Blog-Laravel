@@ -23,26 +23,26 @@ class RatingsController extends Controller
                      ->where ('article_id', $article->id)
                      ->avg('rating');
 
-        $article_id = DB::table('average_ratings')
-                    ->where ('article_id', $article->id)
-                    ->first();
+        // $article_id = DB::table('articles')
+        //             ->where ('article_id', $article->id)
+        //             ->first();
                     //dd($article_id);
-        if($article_id === NULL)
-        {
-            $articleid = $article->id;
-            $article->addAverage_rating($avgRating, $articleid);
-        }
-        else
-        {
-            DB::table('average_ratings')
-            ->where ('article_id', $article->id)
-            ->update(['average_rating' => $avgRating]);
+        // if($article_id === NULL)
+        // {
+        //     $articleid = $article->id;
+        //     $article->addAverage_rating($avgRating, $articleid);
+        // }
+        //else
+        //{
+            // DB::table('average_ratings')
+            // ->where ('article_id', $article->id)
+            // ->update(['average_rating' => $avgRating]);
 
             DB::table('articles')
             ->where ('id', $article->id)
             ->update(['average_rating' => $avgRating]);
 
-        }
+        //}
         // $article->id;
 
         // Put average in average table

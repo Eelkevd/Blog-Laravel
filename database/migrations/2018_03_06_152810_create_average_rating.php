@@ -15,11 +15,13 @@ class CreateAverageRating extends Migration
     {
         Schema::create('average_ratings', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('article_id');
+            $table->integer('article_id')->unsigned();
             $table->integer('average_rating');
             $table->timestamps();
 
-            $table->foreign('average_rating')->references('average_rating')->on('articles');
+            $table->foreign('article_id')->references('id')->on('articles');
+
+            // $table->foreign('average_rating')->references('average_rating')->on('articles');
         });
     }
 
