@@ -72,11 +72,22 @@ class Article extends Model
 	// Returns sorted blogs by date
 	public static function archives()
 	{
-			return static::selectRaw('year(created_at) year, monthname(created_at) month')
-				->groupBy('year', 'month')
-				->orderByRaw('min(created_at) desc')
-				->get()
-				->toArray();
+
+
+				return Article::orderBy('created_at', 'desc')
+						->whereNotNull('created_at')
+						->get()
+						->groupBy(function(Article $article) {
+								return $article->created_at->format('F');
+						})
+						->map(function ($item) {
+								return $item
+										->sortByDesc('created_at')
+										->groupBy( function ( $item ) {
+												return $item->created_at->format('Y');
+										});
+
+						});
 
 	}
 

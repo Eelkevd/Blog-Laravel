@@ -16,10 +16,10 @@
 // Authentication routes
 Auth::routes();
 
-//Homepage
+//Articles Controller
 Route::get('/', 'BlogController@index')->name('home');
 Route::get('/articles', 'ArticlesController@home');
-
+Route::get('/{year}/articles', 'ArticlesController@year');
 // Page of specific blog
 Route::get('/blogs/{blog}', 'BlogController@show');
 
