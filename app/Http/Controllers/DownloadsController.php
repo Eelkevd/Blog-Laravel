@@ -1,25 +1,17 @@
 <?php
 
+// Controller of the downloads for paywall administration
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Paywall;
 use Carbon\Carbon;
 
 class DownloadsController extends Controller
 {
-
-    public function download($file_name) {
-      $time = new Carbon();
-      // if downloaded newest bankdata, set downloaded to true in paywall
-
-      
-      $file_path = $file_name;
-
-      return response()->download($file_path)->deleteFileAfterSend(true);
-
-
-
+    // Function to download excel file and delete the file afterwards
+    public function download($file_name) 
+    {  
+    $file_path = $file_name;
+    return response()->download($file_path)->deleteFileAfterSend(true);
     }
-
 }

@@ -1,9 +1,7 @@
 <!doctype html>
 
 <html lang="{{ app()->getLocale() }}">
-
     <head>
-
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,13 +21,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.css"/>
-
 
     </head>
 
@@ -45,7 +40,7 @@
                 <li class="nav-item dropdown"><em>You are logged in as </em>
                     
                     <a href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                        {{ Auth::user()->name }} </span>
+                        {{ Auth::user()->name }} 
                     </a>
 
                     <div>
@@ -66,18 +61,13 @@
         </ul>
 
         @yield('header')
-
         @include('layouts.header')
-
-<!--         @include ('layouts.sidebar') -->
 
         <div class="content">
           @yield('content')
         </div>
 
-</div> <!-- end container -->
+        </div> <!-- end container -->
         @include('layouts.footer')
-
     </body>
-
 </html>

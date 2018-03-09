@@ -22,7 +22,6 @@ class BlogController extends Controller
 	public function show(Blog $blog)
 	{
 		$articles = DB::table('articles')->orderBy('average_rating', 'desc')->where ('blog_id', $blog->id)->get();
-		// dd($articles);
 		return view('blogs.show', compact('blog', 'articles'));
 	}
 
@@ -41,5 +40,4 @@ class BlogController extends Controller
 		$blog->users()->attach(request('user_id'));
 		return redirect("/");
 	}
-
 }

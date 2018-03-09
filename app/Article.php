@@ -26,25 +26,25 @@ class Article extends Model
 		$this->comments()->create(compact('body'));
 	}
 
-	// Couple comments with articles
+	// Couple ratings with articles
 	public function ratings()
 	{
 		return $this->hasMany(Rating::class);
 	}
 
-	// Couple a new comment to the other comments of an article
+	// Couple a new rating to the an article
 	public function addRating($rating)
 	{
 		$this->ratings()->create(compact('rating'));
 	}
 
-		// Couple blog with articles
+    // Couple blog with articles
 	public function average_ratings()
 	{
 		return $this->hasOne(AverageRating::class);
 	}
 
-		// Couple updated average to an article
+    // Couple updated average to an article
 	public function addAverage_rating($average_rating, $article_id)
 	{
 		$this->average_rating()->create(compact('average_rating', 'article_id'));
@@ -56,6 +56,7 @@ class Article extends Model
 		return $this->belongsTo(Blog::class);
 	}
 
+    // Couple month and year to article
 	public function scopeFilter($query, $filters)
 	{
 		if($month = $filters['month'])
@@ -71,8 +72,7 @@ class Article extends Model
 	// Returns sorted blogs by date
 	public static function archives()
 	{
-
-	return Article::orderBy('created_at', 'desc')
+        return Article::orderBy('created_at', 'desc')
 	    ->whereNotNull('created_at')
 	    ->get()
 	    ->groupBy(function(Article $post) {
@@ -80,11 +80,10 @@ class Article extends Model
 	    })
 	    ->map(function ($item) {
 	        return $item
-	            ->sortByDesc('created_at')
-	            ->groupBy( function ( $item ) {
-	                return $item->created_at->format('Y');
-	            });
+	        ->sortByDesc('created_at')
+	        ->groupBy( function ( $item ) {
+	            return $item->created_at->format('Y');
+	        });
 	    });
 	}
-
 }

@@ -1,7 +1,7 @@
 <?php
 
+// Controller for the sitemap
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Article;
 use App\Category;
@@ -9,33 +9,27 @@ use App\Blog;
 
 class SitemapController extends Controller
 {
+  // Function to create sitemap
   public function index()
   {
-    $articles = Article::latest()->first();
-    $blogs = Blog::latest()->first();
-
-    return response()->view('sitemap.index', [
-        'articles' => $articles,
-        'blogs' => $blogs,
-    ])->header('Content-Type', 'text/xml');
+      $articles = Article::latest()->first();
+      $blogs = Blog::latest()->first();
+      return response()->view('sitemap.index', [
+         'articles' => $articles,
+         'blogs' => $blogs,
+      ])->header('Content-Type', 'text/xml');
   }
 
+  // Function to get sitemap of articles
   public function articles()
   {
       $articles = Article::latest()->get();
       return response()->view('sitemap.articles', [
           'articles' => $articles,
-        ])->header('Content-Type', 'text/xml');
-  }
-
-  public function posts()
-  {
-      $article = Article::all()->where('category_id', '!=', 21)->get();
-      return response()->view('sitemap.posts', [
-          'articles' => $article,
       ])->header('Content-Type', 'text/xml');
   }
 
+  // Function to get sitemap of categories
   public function categories()
   {
       $categories = Category::all();
@@ -44,8 +38,7 @@ class SitemapController extends Controller
       ])->header('Content-Type', 'text/xml');
   }
 
-  
-
+  // Function to get sitemap of blogs
   public function blog()
   {
       $blog = Blog::latest()->get();

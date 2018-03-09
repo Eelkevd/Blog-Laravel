@@ -1,6 +1,4 @@
-
-		   		<a href="/articles/{{ $article->id }}">
-					{{ $article -> title }}
-				</a>
-
-				<p>Rating: {{ $article -> average_rating }}</p>
+        <a href="/articles/{{ $article->id }}">
+            {{ $article -> title }}
+        </a>
+        <p>Rating: {{ $article -> average_rating }}</p>

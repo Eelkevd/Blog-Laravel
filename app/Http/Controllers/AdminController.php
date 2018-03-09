@@ -6,8 +6,6 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-//use Illuminate\Support\Facades\Storage;
-//use ZipArchive;
 
 class AdminController extends Controller
 {
@@ -22,16 +20,18 @@ class AdminController extends Controller
     {
         $userid = Auth::id();
         $user = DB::table('users')->where('id', $userid)->first();
-        if ($user->owner == 1){
+        if ($user->owner == 1)
+        {
             return view('owner.owner');   
         }
-    	else {
+    	else 
+        {
             return redirect('/');
         }
     }
 
 
-    // Function to make for each table if the database a backup file
+    // Function to make for each table in the database a backup file
     public function backup()
     {
         $command;
@@ -42,7 +42,8 @@ class AdminController extends Controller
         $dbUsername = env('DB_USERNAME');
         $dbPassword = env('DB_PASSWORD');
 
-        switch ($dbConnection) {
+        switch ($dbConnection) 
+        {
             case "mysql":
             $command = "C:\\xampp\mysql\bin\mysqldump $dbName -h$dbHost -P$dbPort -u$dbUsername > database_backup.sql";
             break;
@@ -51,7 +52,6 @@ class AdminController extends Controller
             $command = "PGPASSWORD='$dbPassword' pg_dump -h $dbHost -p $dbPort -U $dbUsername $dbName > database_backup.sql";
             break;
         }
-       // dd($command);
         exec($command);
         return response()->download('database_backup.sql')->deleteFileAfterSend(false);
     }   

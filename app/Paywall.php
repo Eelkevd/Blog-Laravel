@@ -11,8 +11,6 @@ class Paywall extends Model
     // Couple paywall with user
     public function user()
     {
-      return $this->belongsTo(User::class);
+       return $this->belongsTo(User::class);
     }
-
-
 }

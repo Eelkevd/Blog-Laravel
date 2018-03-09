@@ -30,7 +30,6 @@
                         <!-- Blog name input field -->
                         <div class="form-group row">
                             <label for="title" class="col-md-4 col-form-label text-md-right">Blog name</label>
-
                             <div class="col-md-6">
                                 <input id="title" type="text" class="form-control{{ $errors->has('title  ') ? ' is-invalid' : '' }}" name="title" value="{{ old('title') }}" required>
 
@@ -39,7 +38,6 @@
                                         <strong>{{ $errors->first('title') }}</strong>
                                     </span>
                                 @endif
-
                             </div>
                         </div>
 

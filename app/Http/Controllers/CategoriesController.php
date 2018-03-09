@@ -35,6 +35,5 @@ class CategoriesController extends Controller
         ]);
         $category = Category::create(request(['name']));
         return redirect('articles/categories');
-
    	}
 }

@@ -22,18 +22,18 @@ class ArticlesController extends Controller
     // Function to get all articles with latest on top
     public function blogs()
     {
-		  $articles = Article::latest()->get();
+        $articles = Article::latest()->get();
     	return view('articles.blogs', compact('articles'));
     }
 
     // Function to show specific article
     public function show(Article $article)
     {
-      // log view of the page with path and id of the visited article
-      activity()
-       ->performedOn($article)
-       ->withProperties(['path' => Path::path()])
-       ->log('pageview');
+        // Log view of the page with path and id of the visited article
+        activity()
+        ->performedOn($article)
+        ->withProperties(['path' => Path::path()])
+        ->log('pageview');
 
 	     return view('articles.show', compact('article'));
     }
@@ -70,7 +70,7 @@ class ArticlesController extends Controller
     // Function to validate & store new article in database and redirect to homepage
     public function store(Request $request)
     {
-    	// create a new article/blog
+    	// Create a new article/blog
         $request->validate([
             'title'  => 'required',
             'bodytext'  => 'required'

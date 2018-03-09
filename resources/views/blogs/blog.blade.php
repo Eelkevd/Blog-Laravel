@@ -12,10 +12,8 @@
 	</h3>
 
 	<p class="article-text"><strong><em>Description:</em></strong><br />
-
 		{{ $blog -> subject }}
 		<br />
 	</p>
   	<hr>
-
 </div

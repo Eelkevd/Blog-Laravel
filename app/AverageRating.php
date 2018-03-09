@@ -2,6 +2,7 @@
 
 namespace App;
 
+// Model page for average rating
 class AverageRating extends Model
 {
 	// Couple articles with average

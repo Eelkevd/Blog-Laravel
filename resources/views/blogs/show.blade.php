@@ -1,8 +1,6 @@
 @extends ('layouts.layout')
-
     @section ('content')
 		<div  id="blogOverview">
-
 			<!-- The view to show a selected blog with title, description and all articles -->
 		 	<h2 class="article-title">
 				{{ $blog -> title }}
@@ -20,10 +18,8 @@
 		 	<hr>
 		 	<!-- Shows all articles per selected blogger -->
 		  	@foreach($articles as $article)
-
-		  		@include('blogs.articles')
+		        @include('blogs.articles')
                 <hr>
-
 		   	@endforeach
 		</div>
 	@endsection

@@ -11,12 +11,12 @@
 |
 */
 
-// Routes/Router: An overview of all the webpages and their controller page
+// Routes/Router: An overview of all the webpages and their controller pages
 
 // Authentication routes
 Auth::routes();
 
-//Homepage
+// Homepage
 Route::get('/', 'BlogController@index')->name('home');
 Route::get('/articles', 'ArticlesController@home');
 
@@ -40,7 +40,7 @@ Route::get('/articles/categories', 'ArticlesController@categories');
 Route::get('/articles/create', 'ArticlesController@create');
 Route::post('/articles', 'ArticlesController@store');
 
-// Page to event calendar page
+// Pages to take a look at or create a new event
 Route::get('/event', 'EventController@index');
 Route::get('/event/create', 'EventController@create');
 Route::post('/event/create', 'EventController@store');
@@ -48,7 +48,7 @@ Route::post('/event/create', 'EventController@store');
 // Page of specific article
 Route::get('/articles/{article}', 'ArticlesController@show');
 
-// Page to create and store a new comment
+// Page to create and store a new rating
 Route::post('/articles/{article}/ratings', 'RatingsController@store');
 
 // Page to create and store a new comment
@@ -57,13 +57,13 @@ Route::post('/articles/{article}/comments', 'CommentsController@store');
 // Page to find all articles of selected category
 Route::get('/articles/categories/{category}', 'CategoriesController@home');
 
-// Page for the PaywallController
+// Page for the Paywall
 Route::post('/paywall', 'PaywallController@store');
 
 // Page to admin page
 Route::get('/owner/owner', 'AdminController@home');
 
-// Page to make backup
+// Pages to make backup or excell file
 Route::get('/owner/owner/backup', 'AdminController@backup');
 Route::get('/owner/owner/sepatool', 'PaywallController@excell');
 Route::get('/owner/owner/all_bank_data', 'PaywallController@excell_ALL');
@@ -79,6 +79,3 @@ Route::get('/sitemap', 'SitemapController@index');
 Route::get('/sitemap/articles', 'SitemapController@articles');
 Route::get('/sitemap/categories', 'SitemapController@categories');
 Route::get('/sitemap/blogs', 'SitemapController@blogs');
-
-// See the stats
-Route::get('/owner/stats', 'StatsController@show');
