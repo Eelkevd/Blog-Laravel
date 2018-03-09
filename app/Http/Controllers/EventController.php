@@ -15,7 +15,7 @@ use App\Article;
 class EventController extends Controller 
 {
     // Function to check login
-	public function __construct()
+    public function __construct()
     {
         $this->middleware('auth', ['only' => 'create']);
     }
@@ -41,13 +41,13 @@ class EventController extends Controller
     }
 
     // Function to create new event
-	public function create() 
-	{
-  		return view('articles.create_event');
-	}
+    public function create() 
+    {
+  	return view('articles.create_event');
+    }
 
     // Function to load event page 
-	public function index()
+    public function index()
     {
        $events = [];
        $data = Event::all();
