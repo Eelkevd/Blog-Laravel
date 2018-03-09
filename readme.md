@@ -15,7 +15,7 @@ On our blog platform it's possible to read the articles of your favourite blogge
 - tuesday: finished userstories W8-002 & W8-003, userstories W8-001, W8-005 & W8-006 work in progress;
 - wednesday: finished userstories W8-005 & W8-006, userstory W8-001 put on hold, userstory W8-004 work in progress, soft skill lesson;
 - thursday: Put all finished userstories on Heroku, prepared demo, tested laptop for demo, finished userstory W8-004;
-- friday: Prepare demo
+- friday: Prepare demo, update readme, improved comments in code, listen to other demo's;
 
 ## To test the owner functionalities log in with:
 - email: admin@email.com
@@ -39,6 +39,10 @@ The Userstories of the CodeGorilla assignment for week 8 (in Dutch):
 - W8-005
 - W8-006
 - W8-004
+
+## Used php packages
+- maddhatter/laravel-fullcalendar https://packagist.org/packages/maddhatter/laravel-fullcalendar
+- spatie/laravel-activitylog https://packagist.org/packages/spatie/laravel-activitylog
 
 # Screenshots
 
