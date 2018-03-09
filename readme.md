@@ -51,9 +51,12 @@ The Userstories of the CodeGorilla assignment for week 8 (in Dutch):
 ![Alt text](https://github.com/Eelkevd/Blog-Laravel/blob/master/EventCalendar.png?raw=true "Blog event page")
 
 ### ARCHIVE
-### Trello
+## Trello
 - Old Trello from week 6: https://trello.com/b/vLQRY9Jd/blog-laravel
 - Old Trello from week 7: https://trello.com/b/FlXnsQWy/blog-laravel-week-7 
+
+## Heroku 
+- Old Heroku link https://sheltered-reef-90572.herokuapp.com 
 
 ## Workflow 
 # week 6:
@@ -62,6 +65,7 @@ The Userstories of the CodeGorilla assignment for week 8 (in Dutch):
 - wednesday: Laracast lesson 8-15, userstory W3-002, first online demo with Heroku
 - thursday: Laracast lesson 16 & 30, userstory W4-002, W3-003 work in progress, Eelke sick at home :( 
 - friday: userstory W3-003, W3-004, W3-005 & W3-006 Final online demo with Heroku
+
 # week 7:
 - monday: read new userstories, made new shared Trello, updated old Github repository and readme, Userstory W6-006, W6-002 work in progress;
 - tuesday: watched laracast episode 17, Userstory W6-002, W6-009, W6-011 & W7-002 finished, Userstory W7-001 work in progress, made first release version master branch on Github;
@@ -127,6 +131,7 @@ The Userstories of the CodeGorilla assignment for week 7 (in Dutch):
 - W3-005
 - W3-006
 - W4-002
+
 # week 7
 - W6-002
 - W6-006
