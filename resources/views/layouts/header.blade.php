@@ -5,7 +5,7 @@
   <li class="button"><a href= \articles/blogs>Articles</a></li>
   <li class="button"><a href="/articles/categories">Categories</a></li>
   <li class="button"><a href="/event">Events</a></li>
-	<li class="button"><a href= "/owner/stats" style="width:160px;" >Stats & Sidemaps</a></li>
+	<li class="button"><a href= "/owner/stats" style="width:160px;" >Stats & Sitemaps</a></li>
 
 	<!-- Authentication Links -->
 	@auth

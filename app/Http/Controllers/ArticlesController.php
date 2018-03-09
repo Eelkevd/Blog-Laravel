@@ -93,7 +93,7 @@ class ArticlesController extends Controller
 
         $article = Article::create(request(['blog_id', 'user_id', 'title', 'bodytext']));
         $article->categories()->attach($request->subscribe);
-    	return redirect('articles.blogs');
+    	return redirect('/');
     }
 
 
