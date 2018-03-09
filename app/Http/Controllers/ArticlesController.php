@@ -34,8 +34,7 @@ class ArticlesController extends Controller
         ->performedOn($article)
         ->withProperties(['path' => Path::path()])
         ->log('pageview');
-
-	     return view('articles.show', compact('article'));
+	return view('articles.show', compact('article'));
     }
 
     // Function to go back to homepage
@@ -44,7 +43,6 @@ class ArticlesController extends Controller
         $articles = Article::latest()
         ->filter(request(['month', 'year']))
         ->get();
-
         return view('articles.blogs', compact('articles'));
     }
 
